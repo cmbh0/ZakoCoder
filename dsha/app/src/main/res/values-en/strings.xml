@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English strings. Kept 1:1 with `values/strings.xml` — same keys, same order.
+
+  House style for the English copy:
+  - sentence case, no trailing periods on short labels;
+  - no contractions (apostrophes need escaping in Android XML, and the app voice
+    is calm/neutral anyway);
+  - 「…」 quotes become “…”.
+-->
+<resources>
+    <string name="app_name">DSHA</string>
+
+    <!-- ── Actions ──────────────────────────────────────── -->
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_close">Close</string>
+    <string name="action_copy">Copy</string>
+    <string name="msg_select_copy">Select text</string>
+    <string name="msg_select_hint">Drag to select text, then tap Copy in the system menu</string>
+    <string name="msg_select_done">Done</string>
+    <string name="action_back">Back</string>
+    <string name="action_send">Send</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_pin">Pin</string>
+    <string name="action_unpin">Unpin</string>
+
+    <!-- ── Labels & values ──────────────────────────────── -->
+    <string name="label_model">Model</string>
+    <string name="label_provider">Provider</string>
+    <string name="value_follow_system">Follow system</string>
+    <string name="value_light">Light</string>
+    <string name="value_dark">Dark</string>
+    <string name="conversation_default_title">New chat</string>
+
+    <!-- ── Language setting ─────────────────────────────── -->
+    <string name="settings_language">Language</string>
+    <string name="lang_chinese">简体中文</string>
+    <string name="lang_english">English</string>
+
+    <!-- ── Accent colors ────────────────────────────────── -->
+    <string name="theme_color_blue">Blue</string>
+    <string name="theme_color_green">Green</string>
+    <string name="theme_color_red">Red</string>
+    <string name="theme_color_pink">Pink</string>
+    <string name="theme_color_purple">Purple</string>
+    <string name="theme_color_brown">Brown</string>
+    <string name="theme_color_gray">Gray</string>
+    <string name="a11y_accent_color">%1$s accent color</string>
+
+    <!-- ── Errors & feedback ────────────────────────────── -->
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_network">Network connection failed</string>
+    <string name="error_network_offline">Cannot reach the network. Check your connection or proxy and retry</string>
+    <string name="error_network_timeout">Connection timed out. Try again shortly</string>
+    <string name="error_network_interrupted">The connection was interrupted (server or network hiccup). Please retry</string>
+    <string name="error_network_insecure">Secure connection failed. Check your network or certificates</string>
+    <string name="error_server_busy">The service is busy or temporarily failing. Try again shortly</string>
+    <string name="error_http_status">Server returned HTTP %1$d</string>
+    <string name="error_http_unauthorized">Invalid or expired API key. Enter it again in Settings</string>
+    <string name="error_http_payment_required">Insufficient balance. Top up and retry</string>
+    <string name="error_http_forbidden">This API key has no permission for the request</string>
+    <string name="error_http_not_found">Endpoint not found. Check the Base URL and protocol channel</string>
+    <string name="error_http_too_large">The request is too large (images or history). Reduce it and retry</string>
+    <string name="error_http_rate_limited">Too many requests. Wait a moment and retry</string>
+    <string name="error_no_api_key">No API key yet. Fill it in under Settings → API, then retry.</string>
+    <string name="error_no_model">No model selected yet. Pick one under Settings → API (tap “Test connection” to fetch a custom endpoint’s models, or enter the model id manually).</string>
+    <string name="error_request_failed">Request failed</string>
+    <string name="error_no_content">The model returned no content</string>
+    <string name="error_write_failed">Could not write to the chosen location</string>
+    <string name="error_delete_failed">Delete failed: %1$s</string>
+    <string name="error_import_failed">Import failed: %1$s</string>
+    <string name="export_done">Exported to the chosen location</string>
+    <string name="export_failed">Export failed: %1$s</string>
+    <string name="export_failed_short">Export failed</string>
+    <string name="import_read_failed">Could not read the file</string>
+    <string name="list_separator">; </string>
+    <string name="import_note_separator"> | </string>
+
+    <!-- ── Settings: root page ──────────────────────────── -->
+        <string name="profile_default_name">Not set</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_change_avatar">Change photo</string>
+    <string name="profile_hint">Stored on this device only. Left blank, it shows “Not set”.</string>
+    <string name="profile_remove_avatar">Remove photo</string>
+    <string name="profile_name_hint">Not set</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_data">Data management</string>
+    <string name="settings_api">API</string>
+    <string name="settings_presets">Presets</string>
+    <string name="settings_font_size">Font size</string>
+    <string name="settings_about">About</string>
+    <string name="settings_group_account">Account</string>
+    <string name="settings_group_personal">Personal</string>
+    <string name="settings_group_backup">Backup</string>
+    <string name="settings_group_reset">Reset</string>
+    <string name="settings_group_service">Service</string>
+    <string name="settings_group_auth">Auth</string>
+    <string name="settings_group_presets">Presets</string>
+    <string name="settings_data_summary">Import · Export · Clear</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_accent">Accent color</string>
+    <string name="settings_auto_collapse">Auto-collapse thinking</string>
+    <string name="settings_about_title">About DSHA</string>
+    <string name="settings_export_all">Export all data</string>
+    <string name="settings_export_all_summary">Exports conversations, messages and all versions</string>
+    <string name="settings_import_all">Import all data</string>
+    <string name="settings_import_all_summary">Supports the Chatbox format; merge or overwrite</string>
+    <string name="settings_delete_all">Delete all conversations</string>
+    <string name="settings_destructive_hint">Cannot be undone</string>
+    <string name="settings_delete_all_title">Delete all conversations?</string>
+    <string name="settings_delete_all_body">All conversations, messages and versions will be erased and cannot be recovered. Consider exporting a backup first.</string>
+    <string name="settings_delete_all_confirm">Delete all</string>
+    <string name="settings_delete_all_done">All conversations deleted</string>
+
+    <!-- ── Settings: API ────────────────────────────────── -->
+    <string name="api_test">Test connection</string>
+    <string name="api_testing">Testing…</string>
+    <string name="api_key_unset">Not set</string>
+    <string name="api_test_ok">Connected, %1$d models available</string>
+    <string name="api_test_failed">Connection failed: %1$s</string>
+    <string name="api_model_unset">Not set</string>
+    <string name="api_test_no_model_list">Endpoint reachable, but no /models endpoint (HTTP 404). Enter the model name manually — chat still works.</string>
+    <string name="api_model_empty_hint">No models yet. Tap “Fetch models” to pull this endpoint’s model list, or enter one manually.</string>
+    <string name="api_model_manual">Enter model manually</string>
+    <string name="error_base_url_required">Please enter a Base URL first</string>
+    <string name="api_base_url_hint">http:// and https:// both work. A bare host is fine — /v1 is appended on save, and a pasted /chat/completions is stripped.</string>
+    <string name="api_model_fetch">Fetch models</string>
+    <string name="api_model_refetch">Fetch models again</string>
+    <string name="api_model_fetching">Fetching…</string>
+    <string name="api_model_fetch_ok">Fetched %1$d models</string>
+    <string name="api_model_fetch_failed">Fetch failed: %1$s</string>
+
+    <!-- ── Context / memory ────────────────────────────── -->
+    <string name="settings_context">Context window</string>
+    <string name="settings_context_hint">Drives the context gauge and auto-compaction threshold. Follows the model by default.</string>
+    <string name="context_auto">Follow model</string>
+    <string name="context_128k">128K</string>
+    <string name="context_256k">256K</string>
+    <string name="context_1m">1M</string>
+    <string name="context_custom">Custom…</string>
+    <string name="context_custom_title">Custom context window</string>
+    <string name="context_custom_placeholder">e.g. 393216</string>
+    <string name="context_tokens">%1$s tokens</string>
+    <string name="settings_max_output">Max output</string>
+    <string name="max_output_default">Default (unspecified)</string>
+    <string name="max_output_custom_title">Custom max output</string>
+    <string name="settings_memory_hint">Retrieves related snippets from earlier in this conversation and folds them in as background. Memory is per conversation.</string>
+
+    <!-- ── Agent / tools / terminal / skills / MCP ─────────── -->
+    <string name="composer_agent">Agent</string>
+    <string name="tool_read_file">Read file</string>
+    <string name="tool_write_file">Write file</string>
+    <string name="tool_edit_file">Edit file</string>
+    <string name="tool_list_dir">List directory</string>
+    <string name="tool_run_shell">Run command</string>
+    <string name="tool_python">Run Python</string>
+    <string name="tool_web_fetch">Fetch page</string>
+
+    <string name="settings_tools">Tools &amp; extensions</string>
+    <string name="settings_agent">Agent mode</string>
+    <string name="settings_workspace">Workspace</string>
+    <string name="settings_workspace_hint">Agent and terminal can only touch this directory.</string>
+    <string name="settings_terminal">Terminal</string>
+    <string name="settings_terminal_hint">Run shell commands inside the workspace.</string>
+    <string name="settings_skills">Skills</string>
+    <string name="settings_skills_hint">Package a procedure into a toggleable capability.</string>
+    <string name="settings_mcp">MCP servers</string>
+    <string name="settings_mcp_hint">Connect external tool servers (HTTP / stdio).</string>
+    <string name="settings_runtime">Runtime</string>
+    <string name="settings_runtime_hint">Ubuntu environment: one install gives you apt, gcc and python3.</string>
+
+    <string name="terminal_title">Terminal</string>
+    <string name="terminal_placeholder">Type a command…</string>
+    <string name="terminal_clear">Clear</string>
+    <string name="terminal_busy">Running…</string>
+
+    <string name="skills_title">Skills</string>
+    <string name="skills_empty">No skills yet. Drop in a zip containing SKILL.md, or write one.</string>
+    <string name="skills_empty_title">No skills yet</string>
+    <string name="skills_export">Export</string>
+    <string name="skills_install_zip">Install zip</string>
+    <string name="skills_delete">Delete</string>
+    <string name="skills_enabled_count">%1$d enabled</string>
+    <string name="skills_installed">%1$d skills installed</string>
+
+    <string name="mcp_title">MCP servers</string>
+    <string name="mcp_empty">Nothing configured. MCP lets the model call external tools — search, databases, internal services.</string>
+    <string name="mcp_add">Add server</string>
+    <string name="mcp_name">Name</string>
+    <string name="mcp_endpoint">Endpoint (HTTP)</string>
+    <string name="mcp_command">Command (stdio)</string>
+    <string name="mcp_headers">Headers (one per line, Key: Value)</string>
+    <string name="mcp_connect">Connect</string>
+    <string name="mcp_disconnect">Disconnect</string>
+    <string name="mcp_ready">Connected · %1$d tools</string>
+    <string name="mcp_failed">Connection failed: %1$s</string>
+
+    <string name="runtime_title">Runtime</string>
+
+    <!-- ── Settings: import & export ────────────────────── -->
+    <string name="import_reading">Reading… (large files take a while)</string>
+    <string name="import_working">Importing…</string>
+    <string name="import_progress">%1$d%% processed</string>
+    <string name="import_mode_title">Import mode</string>
+    <string name="import_mode_merge">Add new only (skip conversations already here)</string>
+    <string name="import_mode_replace_same">Overwrite same name (replace them with the file)</string>
+    <string name="import_mode_rename">Keep both (imported one gets a copy suffix)</string>
+    <string name="import_done">Imported from %1$s: %2$d conversations · %3$d messages</string>
+    <string name="import_done_expected"> · %1$d conversations in the archive</string>
+    <string name="import_done_duplicates"> · %1$d already present</string>
+    <string name="import_done_failed"> · %1$d could not be imported: %2$s</string>
+    <string name="import_fail_item">%1$s ×%2$d</string>
+    <string name="import_failed_titles"> (%1$s)</string>
+    <string name="import_fail_too_large">conversation file too large</string>
+    <string name="import_fail_unreadable">conversation file damaged</string>
+    <string name="import_fail_empty">no importable messages</string>
+    <string name="import_fail_broken_tree">message tree malformed</string>
+    <string name="import_fail_missing_entry">conversation file missing from archive</string>
+    <string name="import_fail_write_failed">write failed</string>
+    <string name="err_archive_damaged">The archive is incomplete or damaged (interrupted download?). Export it again and retry</string>
+
+    <!-- ── Settings: presets ────────────────────────────── -->
+    <string name="preset_sheet_title">Presets</string>
+    <string name="preset_sheet_subtitle">Applies to this chat only. Appended in list order — earlier means more weight.</string>
+    <string name="preset_sheet_count">%1$d / %2$d</string>
+    <string name="preset_sheet_empty">No presets yet</string>
+    <string name="preset_sheet_empty_hint">A preset is a named block of prompt text. Write one, then come back and switch it on.</string>
+    <string name="preset_sheet_empty_action">Create in Settings</string>
+    <string name="preset_sheet_manage">Manage</string>
+    <string name="preset_sheet_done">Done</string>
+    <string name="preset_sheet_more">Chat settings · title / prompt / export</string>
+    <string name="preset_count_total">%1$d</string>
+    <string name="preset_count_empty">None</string>
+    <string name="preset_empty">No presets yet</string>
+    <string name="preset_intro">Presets are pluggable prompt modules. This page only creates and edits them. Which ones are active is chosen per conversation under "⋯ → Presets" at the top right of the chat — what you turn on in one topic never leaks into another.</string>
+    <string name="preset_empty_hint">Save prompts you use often — a code reviewer, a fiction partner — and switch them on when needed.</string>
+    <string name="preset_new">New preset</string>
+    <string name="preset_import">Import from a document</string>
+    <string name="preset_import_hint">Pick a file to use as a preset: plain text, Markdown, JSON, YAML and docx all work. You can still edit it afterwards.</string>
+    <string name="err_preset_pdf">Text cannot be extracted from a PDF (Android\'s built-in PDF library can only render it). Copy the content into a text file first.</string>
+    <string name="err_preset_not_text">There is no readable text in this file.</string>
+    <string name="err_preset_empty">This file is empty, nothing to import.</string>
+    <string name="preset_new_hint">A reusable prompt you can switch anytime</string>
+    <string name="preset_order_hint">Appended to the system prompt in list order, before the conversation prompt.</string>
+    <string name="preset_delete_action">Delete preset</string>
+    <string name="preset_delete_title">Delete preset “%1$s”?</string>
+    <string name="preset_delete_body">It will stop being applied anywhere. Existing conversations are untouched.</string>
+    <string name="preset_edit">Edit preset</string>
+    <string name="preset_name_hint">Name, e.g. “Third-person narration”</string>
+    <string name="preset_body_hint">Prompt body. Spell out what the model must do and what it must avoid.</string>
+
+    <!-- ── Settings: font size ──────────────────────────── -->
+    <string name="font_step_small">Small</string>
+    <string name="font_step_smaller">Smaller</string>
+    <string name="font_step_standard">Standard</string>
+    <string name="font_step_larger">Larger</string>
+    <string name="font_step_large">Large</string>
+    <string name="font_step_largest">Largest</string>
+    <string name="font_preview_label">Preview text size</string>
+    <string name="font_scale_hint">Affects chat text, thinking content and all interface text.</string>
+
+    <!-- ── Settings: about ──────────────────────────────── -->
+    <string name="about_version">Version</string>
+    <string name="about_package">Package</string>
+    <string name="about_project">Project</string>
+    <string name="about_project_url">Repository</string>
+    <string name="about_licenses">Open-source licenses</string>
+    <string name="about_icon">Icon</string>
+    <string name="about_libs_net">Networking &amp; serialization</string>
+    <string name="about_libs_storage">Storage &amp; UI</string>
+    <string name="about_libs_parsing">Parsing &amp; highlighting</string>
+    <string name="about_libs_crypto">Encryption</string>
+    <string name="about_libs_math">Math</string>
+    <string name="about_libs_diagram">Diagrams</string>
+    <string name="about_refs">Referenced projects</string>
+    <string name="about_ref_zakocoder">Reference implementation for the on-device Ubuntu (proot) runtime</string>
+    <string name="about_ref_operit">Reference for MCP tool wiring and the AI image-generation flow</string>
+    <string name="about_ai_disclaimer">Generated content comes from the model; use your own judgement.</string>
+
+    <!-- ── Conversations ────────────────────────────────── -->
+    <string name="conversation_fork_suffix">(copy)</string>
+    <string name="conversation_fork_suffix_n">(copy %1$d)</string>
+
+    <!-- ── Chat page ────────────────────────────────────── -->
+    <string name="chat_export_empty">This conversation is not saved yet; there is nothing to export</string>
+    <string name="chat_scroll_bottom">Scroll to bottom</string>
+    <string name="chat_banner_close">Dismiss</string>
+    <string name="chat_vision_unsupported">“%1$s” cannot read images. Switch to a vision-capable model in the thinking menu first (e.g. DeepSeek V4.1 Flash).</string>
+    <string name="msg_edit_input">Edit input</string>
+    <string name="msg_delete_title">Delete this message?</string>
+    <string name="msg_delete_body">All versions of this message are deleted together. This cannot be undone.</string>
+
+    <!-- ── Attachments ──────────────────────────────────── -->
+    <string name="attach_read_failed">Could not read the attachment</string>
+    <string name="attach_default_file_name">file</string>
+    <string name="err_file_oversize">File is too large (limit %1$d MB)</string>
+    <string name="attach_auto_txt">Long input was converted to a TXT attachment (%1$d chars)</string>
+    <string name="attach_file_open_failed">No app can open this file</string>
+    <string name="attach_camera_file_failed">Could not create the camera file</string>
+    <string name="attach_default_text_name">Untitled.txt</string>
+    <string name="err_image_too_big">Image exceeds 24MB; compress it first</string>
+    <string name="err_image_read">Could not read this image</string>
+    <string name="err_file_read">Could not read this file</string>
+    <string name="err_file_too_big">File too large (over %1$dKB)</string>
+    <string name="err_not_plain_text">This does not look like a plain-text file</string>
+    <string name="err_text_too_long">Text too long (%1$d characters, limit %2$d)</string>
+    <string name="err_file_empty">The file is empty</string>
+    <string name="err_doc_legacy">Legacy .doc / .xls is not supported; save it as .docx first</string>
+    <string name="err_pdf_too_big">PDF exceeds 40MB; split it first</string>
+    <string name="err_pdf_open">Could not open this PDF</string>
+    <string name="err_pdf_no_pages">This PDF has no pages</string>
+    <string name="pdf_page_name">%1$s · page %2$d</string>
+    <string name="warn_pdf_truncated">The PDF has %1$d pages; only the first %2$d were taken (about 1024 tokens each, more would blow up the context)</string>
+    <string name="err_docx_not_zip">This is a zip archive but not a .docx document (word/document.xml not found)</string>
+    <string name="err_docx_too_big">File exceeds 40MB; make it smaller first</string>
+    <string name="err_docx_empty">No readable text in this docx</string>
+    <string name="err_docx_too_long">Document too long (%1$d characters, limit %2$d)</string>
+
+    <!-- ── Model list / stats / compaction ──────────────── -->
+    <string name="models_fetched">Fetched %1$d models</string>
+    <string name="models_fetch_failed">Fetch failed: %1$s</string>
+    <string name="models_fetch_needs_key">(API key required first)</string>
+    <string name="compact_too_few">Not enough messages to compact yet.</string>
+    <string name="compact_too_long">This conversation is too long to compact: the recent turns alone already exceed the window. Try another model, or start a new conversation.</string>
+    <string name="compact_failed">Compaction failed</string>
+    <string name="compact_failed_detail">Compaction failed: %1$s</string>
+    <string name="compact_divider_running">Tidying context</string>
+    <string name="compact_divider_done">Context compacted · %1$d msgs</string>
+    <string name="compact_divider_tokens">%1$s → %2$s tokens</string>
+    <string name="compact_divider_usage">%1$s / %2$s tokens</string>
+
+    <!-- ── Providers ────────────────────────────────────── -->
+    <string name="provider_name_openai">OpenAI official</string>
+    <string name="provider_name_deepseek">DeepSeek official</string>
+    <string name="provider_name_custom">Custom</string>
+
+    <!-- ── Conversation modes & reasoning ───────────────── -->
+    <string name="mode_creative_title">Writing mode</string>
+    <string name="mode_roleplay_title">Roleplay mode</string>
+    <string name="mode_creative_empty">Write prose</string>
+    <string name="mode_roleplay_empty">Advance the plot</string>
+    <string name="mode_creative_caption">AI writes the prose, keeping voice and point of view consistent</string>
+    <string name="mode_roleplay_caption">AI role-plays the characters, advancing the plot through dialogue and action</string>
+    <string name="reasoning_off">Off</string>
+    <string name="reasoning_low">low</string>
+    <string name="reasoning_medium">medium</string>
+    <string name="reasoning_xhigh">xhigh</string>
+    <string name="model_panel_thinking_mode">Thinking</string>
+    <string name="model_panel_effort">Effort</string>
+    <string name="model_panel_models">Model</string>
+    <string name="model_panel_manage">Manage configs</string>
+    <string name="model_panel_count">%1$d models</string>
+    <string name="model_panel_default_config">Default config</string>
+    <string name="approval_chip">Approval</string>
+
+    <string name="reasoning_high">high</string>
+    <string name="reasoning_max">max</string>
+
+    <!-- ── Conversation list groups ─────────────────────── -->
+    <string name="group_pinned">Pinned</string>
+    <string name="group_today">Today</string>
+    <string name="group_yesterday">Yesterday</string>
+    <string name="group_week">Past 7 days</string>
+    <string name="group_month">Past 30 days</string>
+    <string name="group_earlier">Earlier</string>
+    <string name="profile_more">More</string>
+    <string name="group_older">Earlier</string>
+
+    <!-- ── Markdown rendering ───────────────────────────── -->
+    <string name="md_code_label">Code</string>
+    <string name="md_line_count">· %1$d lines</string>
+    <string name="md_copied">Copied</string>
+    <string name="md_copy_code">Copy code</string>
+    <string name="md_collapse">Collapse</string>
+    <string name="md_expand_all">Expand all (%1$d lines)</string>
+    <string name="md_image">Image</string>
+
+    <!-- ── Message index rail ───────────────────────────── -->
+    <string name="msg_index_empty">(no content)</string>
+    <string name="msg_index_attachments">(%1$d attachments)</string>
+    <string name="msg_index_image">(image)</string>
+    <string name="msg_index_file">(file · %1$s)</string>
+
+    <!-- ── Backup: sources & import feedback ────────────── -->
+    <string name="backup_source_simplechat">SimpleChat backup</string>
+    <string name="backup_source_chatbox">Chatbox backup</string>
+    <string name="backup_source_deepseek">DeepSeek export</string>
+    <string name="err_deepseek_version">This DeepSeek archive is version %1$d; this app reads version %2$d</string>
+    <string name="images_skipped_no_vision">This model does not accept images; %1$d skipped</string>
+    <string name="images_skipped_unreadable">Skipped %1$d image(s): unsupported or damaged file</string>
+    <string name="warn_deepseek_limited">Search steps, link reading and non-image files were not imported</string>
+    <string name="err_unrecognised_file">Unrecognised file: neither a zip archive nor JSON</string>
+    <string name="err_unrecognised_format">Unrecognised file (format=%1$s)</string>
+    <string name="err_scratch_dir">Temp directory unavailable: %1$s</string>
+    <string name="err_no_manifest">No manifest.json in the zip; this does not look like a Chatbox backup</string>
+    <string name="err_manifest_parse">Failed to parse manifest.json</string>
+    <string name="err_not_chatbox">Not a Chatbox backup (format=%1$s)</string>
+    <string name="err_no_sessions">No importable conversations in this backup</string>
+    <string name="err_not_our_backup">Not a backup from this app (format=%1$s)</string>
+    <string name="warn_dropped_images">%1$d image(s) could not be retrieved (missing from the archive)</string>
+    <string name="warn_single_branch">Chatbox: only the branch in view was imported (its fork semantics differ, so forks were not expanded)</string>
+    <string name="import_image_name">Image %1$d×%2$d</string>
+    <string name="import_image_default_name">Imported image</string>
+    <string name="import_conversation_default">Imported conversation</string>
+
+    <!-- ── Markdown export template ─────────────────────── -->
+    <string name="export_unknown_model">Unknown model</string>
+    <string name="export_meta">%1$d messages · exported %2$s</string>
+    <string name="export_scope_note">Current branch and active versions only; thinking content excluded</string>
+    <string name="export_role_me">Me</string>
+    <string name="export_role_ai">AI</string>
+    <string name="export_image_attachment">🖼 Image attachment: %1$s (%2$d×%3$d, image data not included in the text export)</string>
+    <string name="export_attachment">Attachment: %1$s</string>
+
+    <!-- ── Built-in presets (seeded into the database) ──── -->
+
+    <!-- ── Prompts sent to the model ─────────────────────── -->
+    <string name="prompt_title_system">You name conversations. Summarise what this conversation is about in at most 5 words. Output the title only: no quotes, no book-title marks, no trailing punctuation, no explanation or prefix.</string>
+    <string name="prompt_recap_intro">Below is the summary of the earlier conversation — its only historical reference. Do not repeat it; continue from it.\n\n</string>
+    <string name="prompt_role_user">[User]</string>
+    <string name="prompt_role_assistant">[Assistant]</string>
+
+    <!-- ==== from group g2 ==== -->
+<!-- Input bar (InputBar) -->
+    <string name="input_hint">Send a message</string>
+    <string name="input_fullscreen_title">Full-screen input</string>
+    <string name="input_fullscreen_done">Done</string>
+    <string name="input_fullscreen_count">%1$d characters</string>
+    <string name="input_cancel_edit">Cancel editing</string>
+    <string name="input_settings">Chat settings</string>
+    <string name="input_thinking">Thinking level</string>
+    <string name="input_stop">Stop generating</string>
+    <string name="input_send">Send</string>
+    <string name="input_attach_collapse">Collapse the attachment menu</string>
+    <string name="input_attach_add">Add images or files</string>
+
+    <!-- Panel 1: thinking level + model list -->
+    <string name="input_model_unsupported">Not supported by this model</string>
+    <string name="input_thinking_hint">The higher the level, the longer the model thinks before answering, and the more time and cost it takes.</string>
+    <string name="input_thinking_unsupported">The current model does not support thinking. Switch models to use it.</string>
+    <string name="models_refresh">Fetch the list</string>
+    <string name="models_refreshing">Fetching…</string>
+    <string name="models_empty">No model list yet. Tap the top right to fetch it.</string>
+    <string name="model_tag_vision">Vision</string>
+    <string name="model_tag_thinking">Thinking</string>
+    <string name="model_panel_title">Choose a model</string>
+    <string name="model_current">Current model</string>
+
+    <!-- Panel 2: context usage + chat statistics -->
+    <string name="stats_context_usage">Context usage</string>
+    <string name="stats_tokens_estimate">%1$s / %2$s tokens (estimated)</string>
+    <string name="stats_compacted_saving">Compaction saved about %1$s tokens</string>
+    <string name="stats_title">Conversation statistics</string>
+    <string name="stats_total_tokens">Total local content</string>
+    <string name="stats_message_count">Messages</string>
+    <string name="stats_messages">%1$d</string>
+    <string name="stats_avg_ttft">Average time to first token</string>
+    <string name="stats_avg_tps">Average generation speed</string>
+    <string name="stats_total_thinking">Total thinking time</string>
+    <string name="stats_seconds">%1$d seconds</string>
+
+    <!-- Context compaction -->
+    <string name="compact_title">Context compaction</string>
+    <string name="compact_note">Only affects what is sent to the model; local messages are not affected.</string>
+    <string name="compact_running">Generating the recap…</string>
+    <string name="compact_summarized">Earlier conversation summarized</string>
+    <string name="compact_redo">Compact again</string>
+    <string name="compact_discard">Discard</string>
+    <string name="compact_start">Compact context</string>
+    <string name="compact_desc">Summarizes the earlier conversation into a self-contained recap; local messages are kept.</string>
+
+    <!-- Panel 4: chat settings -->
+    <string name="input_conversation_name">Conversation name</string>
+    <string name="input_conversation_name_hint">Give this conversation a name</string>
+    <string name="input_extra_prompt">Conversation prompt</string>
+    <string name="input_extra_prompt_hint">Setup for this conversation, concatenated after the presets</string>
+    <string name="input_prompt_preview">Preview the final prompt</string>
+    <string name="input_prompt_empty">Final prompt: empty</string>
+    <string name="input_prompt_blank">(No presets enabled and no conversation prompt)</string>
+    <string name="input_sampling">Sampling parameters</string>
+    <string name="input_param_temperature">Temperature</string>
+    <string name="input_param_temp_disabled">Controlled by the server in thinking mode; has no effect</string>
+    <string name="input_param_top_p_disabled">Only takes effect in thinking mode</string>
+    <string name="input_param_fast">Fast mode (fast)</string>
+    <string name="input_param_fast_hint">Sends the fast parameter to endpoints that support it (GPT family). Turn off if the server returns 400</string>
+    <string name="stream_retrying">Connection unstable, retrying %1$d/%2$d…</string>
+    <string name="stream_auto_resume">Connection lost, resuming from where it stopped (%1$d/%2$d)…</string>
+    <string name="queue_title">Queued · sent in order when this turn finishes</string>
+    <string name="queue_remove">Remove from queue</string>
+    <string name="artifacts_title">Deliverables · %1$d files</string>
+    <string name="artifacts_more">Show all %1$d files</string>
+    <string name="artifact_open_failed">Cannot open this file: %1$s</string>
+    <string name="input_export_title">Export this conversation</string>
+    <string name="input_export_hint">Markdown document or JSON backup</string>
+    <string name="input_export">Export</string>
+    <string name="input_export_markdown">Markdown document</string>
+    <string name="input_export_json">JSON backup</string>
+
+
+    <!-- ==== from group g3 ==== -->
+<!-- ── Message list / message actions ─────────────────────── -->
+    <string name="msg_regenerate">Regenerate</string>
+    <string name="msg_rewind">Rewind to here</string>
+    <string name="msg_rewind_title">Rewind to before this reply?</string>
+    <string name="msg_rewind_body">Every file change made after this reply is undone: files it created are deleted, files it edited are restored. The conversation also steps back to this point. The old branch is kept — switch versions to get it back.</string>
+    <string name="rewind_will_delete">will delete</string>
+    <string name="rewind_will_restore">will restore</string>
+    <string name="rewind_empty">No file changes after this message — only the conversation will be truncated.</string>
+    <string name="msg_rewind_note">Covers changes made through the write/edit tools. Files rewritten by commands (run_shell) cannot be predicted and are not part of the snapshot.</string>
+    <string name="msg_rewind_done">Rewound %1$d files</string>
+    <string name="msg_continue">Continue generating</string>
+    <string name="msg_fork_from_here">Start a new chat from here</string>
+    <string name="msg_expand_all">Expand all</string>
+    <string name="msg_variant_prev">Previous version</string>
+    <string name="msg_variant_next">Next version</string>
+    <string name="msg_edit_title">Edit reply</string>
+    <string name="msg_save_and_send">Save and send</string>
+    <string name="msg_index_no_messages">No messages yet</string>
+
+    <!-- ── Process panel ─────────────────────────────────────── -->
+    <string name="process_collapse">Collapse</string>
+    <string name="process_expand">Expand</string>
+
+    <!-- ── Attachments ───────────────────────────────────────── -->
+    <string name="attach_remove">Remove attachment</string>
+    <string name="attach_char_count">%1$d characters</string>
+    <string name="attach_camera">Camera</string>
+    <string name="attach_gallery">Photos</string>
+    <string name="attach_file">File</string>
+    <string name="attach_viewer_multi"> (this message has %1$d images, only the first is enlarged)</string>
+
+    <!-- ── Top bar ───────────────────────────────────────────── -->
+    <string name="topbar_history">Chat history</string>
+    <string name="topbar_new_chat">New chat</string>
+
+    <!-- ── Empty state ───────────────────────────────────────── -->
+    <string name="empty_greeting">Hi, what can I help with?</string>
+
+
+    <!-- ==== from group g4 ==== -->
+<!-- ── Drawer (history) ─────────────────────────────── -->
+    <string name="hist_empty">No conversations yet</string>
+    <string name="hist_selected_count">Selected %1$d items</string>
+    <string name="hist_multi_select">Select multiple</string>
+
+    <!-- ── Rename / delete confirmation dialogs (RootScreen) ── -->
+    <string name="hist_rename_title">Rename conversation</string>
+    <string name="hist_delete_title">Once deleted, this conversation cannot be recovered</string>
+    <string name="hist_delete_body">All messages and versions in this conversation will be removed as well</string>
+    <string name="hist_delete_confirm">Delete this conversation</string>
+    <string name="hist_delete_selected_title">Once deleted, these %1$d conversations cannot be recovered</string>
+    <string name="hist_delete_selected_body">All their messages and versions will be removed as well</string>
+
+    <!-- ── Full-screen search page ──────────────────────── -->
+    <string name="search_hint">Search conversation content…</string>
+    <string name="search_prompt">Enter keywords to search titles and message text</string>
+    <string name="search_no_result">No matching conversations or messages</string>
+
+    <!-- ═══════════════════════════════════════════════════════
+         Extended channel (Anthropic-compatible, mirrors the official chat demo)
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- Smart search / link reading -->
+    <string name="web_search">Smart search</string>
+    <string name="web_search_on">Smart search on</string>
+    <string name="web_search_off">Smart search off</string>
+    <string name="search_searching">Searching…</string>
+    <string name="search_image_searching">Searching images…</string>
+    <string name="search_intro">Search</string>
+    <string name="search_found_one">Found 1 page</string>
+    <string name="search_found_many">Found %1$d pages</string>
+    <string name="search_read_one">Read 1 page</string>
+    <string name="search_read_many">Read %1$d pages</string>
+    <string name="search_failed">Web search is unavailable</string>
+    <string name="search_no_content">Nothing relevant found</string>
+    <string name="search_message_no_content">No relevant results</string>
+    <string name="search_stopped">Search stopped</string>
+    <string name="search_deep_searching">Searching</string>
+    <string name="search_open_one">Browsed 1 page</string>
+    <string name="search_open_many">Browsed %1$d pages</string>
+    <string name="search_open_failed">Could not open pages</string>
+    <string name="search_open_failed_tip">Failed</string>
+    <string name="search_find_keyword">Keyword lookup</string>
+    <string name="search_find_failed">Lookup failed</string>
+    <string name="search_find_failed_tip">Not found on page</string>
+    <string name="search_reading">Reading</string>
+    <string name="search_browsing">Browsing the web</string>
+    <string name="search_view_all">View all</string>
+    <string name="search_results">Search results</string>
+    <string name="search_panel_empty">No sources to show for this turn</string>
+
+    <!-- Thinking header (official wording) -->
+    <string name="thinking_running">Thinking</string>
+    <string name="thinking_done">Thought deeply</string>
+    <string name="thinking_done_seconds">Thought for %1$d sec</string>
+    <string name="thinking_stopped">Stopped</string>
+
+    <!-- Safety refusal -->
+
+    <!-- Time/location reminder -->
+    <string name="prompt_language_name">English</string>
+
+    <!-- Settings: protocol channel / search / region -->
+    <string name="settings_api_style">Protocol channel</string>
+    <string name="api_style_auto">Auto (decide by endpoint)</string>
+    <string name="api_style_openai">OpenAI compatible</string>
+    <string name="api_style_anthropic">Anthropic compatible (extended)</string>
+    <string name="api_style_responses">OpenAI Responses (Codex / GPT-5)</string>
+    <string name="settings_web_search">Smart search</string>
+    <string name="settings_web_search_hint">Let the model search the web when needed. Only available on the extended channel.</string>
+    <string name="settings_location">Region</string>
+    <string name="settings_location_hint_short">Used for the time reminder</string>
+    <string name="settings_location_placeholder">City or country, e.g. “Hangzhou”</string>
+
+    <!-- ── Voice input (system recognizer) ──────────────── -->
+    <string name="voice_input">Voice input</string>
+    <string name="voice_stop">Stop recording</string>
+    <string name="voice_unavailable">No speech recognition service is available on this device</string>
+    <string name="voice_empty">Didn\'t catch that, please try again</string>
+    <string name="voice_error_audio">Recording failed, please retry</string>
+    <string name="voice_error_permission">Microphone permission is required for voice input</string>
+    <string name="voice_error_network">Speech recognition needs a network connection</string>
+    <string name="voice_error_busy">The recognition service is busy, try again shortly</string>
+    <string name="voice_error_server">The recognition service failed, try again shortly</string>
+    <string name="voice_permission_denied">Microphone permission denied, voice input unavailable</string>
+    <string name="voice_listening">Listening… release to finish</string>
+    <string name="input_hint_hold_to_talk">Tap to type, or hold to speak</string>
+
+    <!-- ── Read aloud (system TTS) ──────────────────────── -->
+    <string name="tts_speak">Read aloud</string>
+    <string name="tts_stop">Stop reading</string>
+    <string name="tts_failed">Could not read this aloud, please retry</string>
+    <string name="tts_empty">This reply has no text to read</string>
+    <string name="tts_unavailable">No text-to-speech engine is available. Install one in system settings</string>
+    <!-- Read-aloud voice (Settings) -->
+    <string name="tts_voice">Reading voice</string>
+    <string name="tts_voice_default">System default</string>
+    <string name="tts_voice_online">online</string>
+    <string name="tts_voice_loading">Reading the voices installed on this device…</string>
+    <string name="tts_voice_empty">No text-to-speech engine is available on this device. Install one (for example Google Speech Services) and come back.</string>
+    <string name="tts_voice_hint">Voices come from the system text-to-speech engine. Voices marked online may stay silent when offline.</string>
+    <string name="tts_voice_preview">Preview</string>
+    <string name="tts_voice_preview_running">Previewing… tap again to stop</string>
+    <string name="tts_voice_preview_text">Hello, this is a short preview so you can pick a reading voice.</string>
+    <!-- DeepSeek official TTS (/v1/tools/tts, voices stella / tide) -->
+    <string name="tts_voice_stella">Stella (female · DeepSeek official)</string>
+    <string name="tts_voice_tide">Tide (male · DeepSeek official)</string>
+    <string name="tts_voice_official_section">DeepSeek official voices</string>
+    <string name="tts_voice_official_hint">Official voices need the DeepSeek provider selected, a Base URL pointing at api.deepseek.com, and an API key. With other providers, use the system voices above.</string>
+    <string name="tts_official_unavailable">This provider does not support DeepSeek official read-aloud. Pick a system voice in settings.</string>
+    <string name="tts_official_failed">Official read-aloud failed: %1$s</string>
+    <string name="tts_official_empty">Nothing to read aloud here (code blocks and tables are skipped)</string>
+
+    <!-- ── Mermaid diagrams ─────────────────────────────── -->
+    <string name="mermaid_label">Diagram</string>
+    <string name="mermaid_show_code">Code</string>
+    <string name="mermaid_show_diagram">Diagram</string>
+    <string name="mermaid_render_failed">Could not render the diagram. Raw code below.</string>
+    <string name="mermaid_loading">Rendering diagram…</string>
+    <string name="settings_export_archive">Export all chats (ZIP archive)</string>
+    <string name="settings_export_archive_summary">A complete backup of every chat and attachment, plus a Markdown document per chat. Can be imported back directly.</string>
+
+    <!-- ── Workspace / permissions / screen (v1.2.1) ────────── -->
+    <string name="settings_screen">Screen control</string>
+    <string name="settings_screen_hint">Let the agent read the screen, tap and type.</string>
+    <string name="settings_permissions">Permissions</string>
+    <string name="settings_permissions_hint">Review and grant the runtime permissions it needs.</string>
+
+    <string name="mention_title">Reference a capability</string>
+    <string name="mention_kind_skill">Skill</string>
+    <string name="mention_kind_mcp">MCP</string>
+
+    <string name="workspace_title">Workspace</string>
+    <string name="workspace_new_internal">New internal folder</string>
+    <string name="workspace_new_internal_desc">Create a named folder in app storage</string>
+    <string name="workspace_folder_name_hint">Folder name, e.g. project-a</string>
+    <string name="workspace_create">Create</string>
+    <string name="workspace_cloud_empty">No cloud environment yet</string>
+    <string name="workspace_manage_cloud">Manage cloud environments</string>
+    <string name="workspace_cloud_unbind_hint">Go back to local. Files stay in the cloud.</string>
+    <string name="workspace_pick_failed">That location has no real path. Pick another folder.</string>
+    <string name="workspace_bind_after_first_message">Send the first message before binding a cloud environment</string>
+    <!-- Workspace picker -->
+    <string name="workspace_pick_title">Set up workspace</string>
+    <string name="workspace_pick_subtitle">Give the agent a folder of its own. Reads, writes and commands stay inside it.</string>
+    <string name="workspace_pick_internal">Built-in workspace</string>
+    <string name="workspace_pick_internal_desc">Created inside the app, needs no permission</string>
+    <string name="workspace_pick_internal_named">Built-in workspace · %1$s</string>
+    <string name="workspace_internal_root">Built-in workspace (root)</string>
+    <string name="workspace_pick_device">Choose a folder</string>
+    <string name="workspace_pick_device_desc">Pick an existing folder on this device</string>
+    <string name="workspace_pick_cloud">Cloud environment</string>
+    <string name="workspace_pick_cloud_desc">Connect a remote machine; files and commands run there</string>
+    <string name="workspace_pick_current">Current · %1$s</string>
+    <!-- History groups by workspace -->
+    <string name="state_on">On</string>
+    <string name="state_off">Off</string>
+    <string name="group_plain">Plain chats</string>
+    <string name="group_local">Local workspace</string>
+    <string name="group_cloud">Cloud workspace</string>
+    <string name="group_workspace_internal">Built-in workspace</string>
+    <string name="group_workspace_device">Local folders</string>
+    <string name="group_workspace_cloud">Cloud</string>
+    <string name="workspace_kind_none">Not set · plain chat, tools use the app\'s internal folder</string>
+    <string name="workspace_pick_plain">Current · plain chat (no workspace)</string>
+    <string name="workspace_current">Current</string>
+    <string name="workspace_kind_internal">Internal · no permission needed</string>
+    <string name="workspace_kind_device">Device folder · needs all-files access</string>
+    <string name="workspace_kind_container">Container folder · bound by host path</string>
+    <string name="workspace_hint">The agent and terminal can only see inside this folder. Rebinding never moves files.</string>
+    <string name="workspace_shortcuts">Common locations</string>
+    <string name="workspace_browse">Browse</string>
+    <string name="workspace_parent">Parent folder</string>
+    <string name="workspace_empty">(no subfolders)</string>
+    <string name="workspace_not_dir">Not a directory</string>
+    <string name="workspace_no_permission">Cannot read this folder — enable all-files access in Permissions</string>
+    <string name="workspace_bind_here">Bind this folder</string>
+    <string name="workspace_container_hint">For a container workspace, enter the host path of that folder inside the Ubuntu rootfs, e.g. /storage/emulated/0/ubuntu/rootfs/home/user/app. Reads, writes and commands act on it directly.</string>
+    <string name="workspace_input_path">Enter a path</string>
+    <string name="workspace_reset">Back to internal</string>
+    <string name="workspace_open_permissions">Grant access</string>
+
+    <string name="permissions_title">Permissions</string>
+    <string name="permissions_intro">These are the system capabilities the app uses. Each takes effect only after you grant it, and can be revoked at any time.</string>
+    <string name="permissions_granted">Granted</string>
+    <string name="permissions_denied">Not granted</string>
+    <string name="permissions_unknown">Unknown</string>
+    <string name="permissions_granted_count">%1$d / %2$d</string>
+    <string name="permissions_open">Open</string>
+    <string name="permissions_open_failed">No direct entry found — open App info and look for it there</string>
+    <string name="permissions_footer">Accessibility and all-files access are system switches. Only you can turn them on in system settings — no app can do it for you.</string>
+
+    <string name="permission_notifications">Notifications</string>
+    <string name="permission_notifications_body">Tell you when a long task finishes in the background.</string>
+    <string name="permission_notifications_impact">Without it: keep the app open to see results.</string>
+    <string name="permission_files">All files access</string>
+    <string name="permission_files_body">Bind the workspace to a real folder on storage.</string>
+    <string name="permission_files_impact">Without it: only the internal workspace works.</string>
+    <string name="permission_overlay">Display over other apps</string>
+    <string name="permission_overlay_body">Show a small banner while the agent controls the screen.</string>
+    <string name="permission_overlay_impact">Without it: actions still work, but you cannot see what it touches.</string>
+    <string name="permission_accessibility">Accessibility service</string>
+    <string name="permission_accessibility_body">Read the current screen\'s controls and tap, type or swipe.</string>
+    <string name="permission_accessibility_impact">Without it: the whole screen-control toolset is unavailable.</string>
+    <string name="permission_battery">Battery optimization whitelist</string>
+    <string name="permission_battery_body">Keep long tasks alive in the background.</string>
+    <string name="permission_battery_impact">Without it: long tasks may be killed when the screen locks.</string>
+
+    <string name="screen_title">Screen control</string>
+    <string name="screen_connected">Connected</string>
+    <string name="screen_disconnected">Off</string>
+    <string name="screen_intro">Once enabled, the agent can read the current screen and act on it with your consent — tap buttons, fill forms, scroll lists, go back.</string>
+    <string name="screen_service_name">DSHA screen service</string>
+    <string name="screen_service_body">This is an accessibility service. It only looks at the foreground screen, never at apps in the background.</string>
+    <string name="screen_enable">Enable</string>
+    <string name="screen_open_settings">Open system settings</string>
+    <string name="screen_rules_title">What it will not do</string>
+    <string name="screen_rule_foreground">Foreground only: no background apps, no notification contents.</string>
+    <string name="screen_rule_password">Password fields are never read or tapped; screens containing them are never captured.</string>
+    <string name="screen_rule_snapshot">Every action must carry a fresh snapshot; if the screen changed, it refuses.</string>
+    <string name="screen_rule_stop">Stoppable at any time: flip the system switch off and it is gone.</string>
+    <string name="screen_probe">Try reading the screen</string>
+    <string name="screen_probing">Reading…</string>
+    <string name="screen_probe_ok">Success: got a %1$d-character snapshot.</string>
+    <string name="screen_last_action">%1$s · %2$s</string>
+    <string name="screen_footer">Screen control is off by default. While it is on, every tap shows up as a tool card in the conversation.</string>
+
+    <string name="screen_service_label">DSHA screen control</string>
+    <string name="screen_service_description">Allow DSHA to read the current screen and tap or type on it. Active only while you keep it enabled.</string>
+    <string name="screen_service_summary">Let the agent control this phone\'s screen</string>
+
+    <!-- ── Cloud workspace (v1.2.2) ─────────────────────────── -->
+    <string name="settings_cloud">Cloud environment</string>
+    <string name="settings_cloud_hint">Put the workspace on a public machine — nothing on this phone.</string>
+
+    <string name="cloud_title">Cloud environment</string>
+    <string name="cloud_intro">The workspace lives on a remote machine; the phone only sends instructions. No Ubuntu, no local storage. Each conversation binds its own environment, so topics never cross. Two ways in: an HTTP service (deploy bundle below) or SSH straight into a Linux box (nothing to install).</string>
+    <string name="cloud_add">Add cloud environment</string>
+    <string name="cloud_edit">Edit</string>
+    <string name="cloud_delete">Delete</string>
+    <string name="cloud_delete_title">Delete this cloud environment?</string>
+    <string name="cloud_delete_body">The connection details for \"%1$s\" will be removed. Files on that machine are untouched.</string>
+    <string name="cloud_delete_bound_body">\"%1$s\" is in use by this conversation. After deleting, it falls back to the local workspace.</string>
+    <string name="cloud_bind_here">Bind to this chat</string>
+    <string name="cloud_unbind_here">Unbind</string>
+    <string name="cloud_bound_badge">In use</string>
+    <string name="cloud_test">Test</string>
+    <string name="cloud_testing">Testing…</string>
+    <string name="cloud_test_ok">Connected.</string>
+    <string name="cloud_test_ok_exec">Connected (root path silent, exec channel works).</string>
+    <string name="cloud_test_fail">Cannot reach it: check the address, the token, and whether the service is still running.</string>
+    <string name="cloud_test_fail_reason">Cannot connect: %1$s</string>
+    <string name="cloud_kind_http">HTTP service</string>
+    <string name="cloud_kind_ssh">SSH server</string>
+    <string name="cloud_field_host">Host (IP or domain)</string>
+    <string name="cloud_field_port">Port</string>
+    <string name="cloud_field_user">Username</string>
+    <string name="cloud_auth_password">Password</string>
+    <string name="cloud_auth_key">Private key</string>
+    <string name="cloud_field_password">Login password</string>
+    <string name="cloud_field_key">Private key (-----BEGIN … PRIVATE KEY-----)</string>
+    <string name="cloud_field_passphrase">Key passphrase (leave empty if none)</string>
+    <string name="cloud_field_workdir">Working directory (empty = login directory)</string>
+    <string name="cloud_ssh_hint">SSH needs nothing installed on the server: commands go through exec channels, files through SFTP, with exactly the same capabilities as the HTTP service. On first connect a small helper script is placed in ~/.dsha/ (deleting it does no harm). Host keys are not pinned (a rebuilt server will not lock you out); verify the fingerprint after testing the connection.</string>
+    <string name="cloud_field_name">Name (anything, e.g. \"Tokyo box\")</string>
+    <string name="cloud_field_url">Address (https://…)</string>
+    <string name="cloud_field_token">Token</string>
+    <string name="cloud_field_hint">Both come from whoever deployed it. Use the root address, without /exec.</string>
+    <string name="cloud_deploy_title">No cloud environment yet?</string>
+    <string name="cloud_deploy_body">Here is a ~30 KB deployment bundle. Send it to any AI that can operate a server, ask it to deploy per the instructions, and it will hand back an address and a token.</string>
+    <string name="cloud_deploy_steps">1. Tap “Copy deploy text” and paste it to any AI that can operate a server. 2. Ask it to deploy publicly and return an address and token. 3. Paste them above.</string>
+    <string name="cloud_deploy_open">Open with another app</string>
+    <string name="cloud_deploy_share">Share to AI</string>
+    <string name="cloud_deploy_copy_path">Copy path</string>
+    <string name="cloud_deploy_copy_text">Copy deploy text</string>
+    <string name="cloud_deploy_copied_text">Copied. Paste it to any AI that can operate a server.</string>
+    <string name="cloud_deploy_copy_failed">Failed to read the deploy bundle</string>
+    <string name="cloud_deploy_save_failed">Save failed: %1$s</string>
+    <string name="cloud_deploy_saved">Saved to %1$s</string>
+    <string name="cloud_deploy_copied">Path copied</string>
+    <string name="cloud_deploy_no_app">No app can open zip files. Install a file manager first.</string>
+    <string name="cloud_deploy_path_public">Saved to %1$s — file managers will open right in this folder</string>
+    <string name="cloud_deploy_path_private">Saved to %1$s (app-private; grant \"All files access\" to move it to Download/DSHA)</string>
+    <string name="cloud_deploy_save">Save deployment bundle</string>
+    <string name="cloud_deploy_working">Preparing…</string>
+    <string name="cloud_footer">The token equals shell access on that machine. Do not post it publicly. The service is not sandboxed — run it as a regular user.</string>
+
+    <string name="workspace_cloud_section">Cloud environment</string>
+    <string name="workspace_cloud_bind">Bind</string>
+    <string name="workspace_cloud_switch">Change</string>
+    <string name="workspace_cloud_unbind">Unbind</string>
+    <string name="workspace_cloud_bound_hint">Reads, writes and commands in this chat all happen on that machine.</string>
+    <string name="workspace_cloud_intro">For when you neither want a container nor want the agent touching phone storage. Once bound, this chat\'s file and shell tools all move to the cloud.</string>
+
+    <!-- ── Top bar overflow / tool card detail (v1.2.2) ────── -->
+    <string name="topbar_more">More</string>
+    <string name="topbar_files">Files</string>
+    <string name="topbar_pin">Pin to top</string>
+    <string name="topbar_unpin">Unpin</string>
+    <string name="topbar_delete">Delete</string>
+
+    <!-- Tool approval -->
+    <string name="approval_waiting">Needs your approval</string>
+    <string name="approval_needs">Needs your approval · %1$s</string>
+    <string name="approval_allow">Allow</string>
+    <string name="approval_deny">Deny</string>
+    <string name="approval_always">Don\'t ask again this session</string>
+    <string name="approval_mode_title">Tool approval</string>
+    <string name="approval_mode_normal">Normal</string>
+    <string name="approval_mode_normal_desc">Reads run freely; writes, commands and screen actions ask first</string>
+    <string name="approval_mode_elevated">Elevated</string>
+    <string name="approval_mode_elevated_desc">Files and commands (including root) run freely; third-party tools and screen still ask</string>
+    <string name="approval_mode_yolo">Full auto</string>
+    <string name="approval_mode_yolo_desc">Never ask again, including deletes, root and third-party calls</string>
+    <string name="approval_yolo_confirm_title">Turn on full auto?</string>
+    <string name="approval_yolo_confirm_body">Every tool call will run immediately without confirmation — including deleting files, running commands as root and operating the screen. Only enable this when you trust the task and the environment.</string>
+    <string name="approval_yolo_confirm_ok">I understand</string>
+    <string name="approval_risk_read">read</string>
+    <string name="approval_risk_write">modify files</string>
+    <string name="approval_risk_exec">run commands</string>
+    <string name="approval_risk_privileged">root access</string>
+    <string name="approval_risk_network">network</string>
+    <string name="approval_risk_mcp">third-party tools</string>
+    <string name="approval_risk_screen">screen control</string>
+    <string name="input_model_and_thinking">Model and thinking effort</string>
+
+    <string name="tool_detail_args">Arguments</string>
+    <string name="tool_detail_diff">Changes</string>
+    <string name="tool_detail_output">Result</string>
+
+    <string name="cloud_files_no_env">This chat has no cloud environment bound yet.</string>
+    <string name="cloud_files_close">Close</string>
+    <string name="cloud_files_loading">Loading…</string>
+    <!-- 定时任务 -->
+    <string name="schedule_title">Reminders</string>
+    <string name="schedule_page_hint">Ring a system notification at the set time. You can also just tell the AI: "remind me to drink water at 8 every morning".</string>
+    <string name="schedule_empty">No reminders yet</string>
+    <string name="schedule_add">New reminder</string>
+    <string name="schedule_new_title">Remind me to…</string>
+    <string name="schedule_field_title">Water / meeting / medicine</string>
+    <string name="schedule_field_note">Note (optional)</string>
+    <string name="schedule_time">Time</string>
+    <string name="schedule_channel">Reminders</string>
+    <string name="schedule_channel_desc">Notifies you when the time comes</string>
+    <string name="schedule_notify_body">It\'s time</string>
+    <string name="schedule_delete">Delete reminder</string>
+    <string name="schedule_count">%1$d reminders</string>
+    <string name="settings_group_agent">Agent</string>
+    <string name="settings_group_extension">Extensions</string>
+    <string name="settings_group_model">Model &amp; service</string>
+    <string name="settings_group_data">Data</string>
+    <string name="settings_group_more">Other</string>
+    <string name="settings_group_app">App</string>
+    <string name="settings_group_voice">Voice</string>
+    <string name="settings_group_diag">Diagnostics</string>
+    <string name="settings_debug_log">App logs</string>
+    <string name="settings_debug_log_off">Off</string>
+    <string name="settings_export_log">Export logs</string>
+    <string name="log_export_done">Logs exported</string>
+    <string name="log_export_failed">Export failed, try another folder</string>
+    <string name="settings_group_about">About</string>
+    <string name="settings_personalize">Personalization</string>
+    <string name="settings_profile_subtitle">Account and profile</string>
+    <string name="settings_account_manage">Account</string>
+    <string name="settings_group_appearance">Appearance &amp; reading</string>
+    <string name="settings_screen_value_a11y">Accessibility</string>
+    <string name="settings_screen_value_root">ROOT</string>
+    <string name="settings_screen_value_off">Off</string>
+    <string name="settings_schedule_value">%1$d</string>
+    <string name="settings_schedule_none">Not set</string>
+    <string name="settings_agent_default">On for new chats</string>
+    <string name="screen_root_title">Root channel</string>
+    <string name="screen_root_body">With root, input / uiautomator / screencap can be run through su without the accessibility service. When both channels work, accessibility is preferred (node fingerprints make mis-taps far less likely); root is the fallback. The grant dialog comes from Magisk / KernelSU — this app never escalates by itself.</string>
+    <string name="screen_root_check">Check root</string>
+    <string name="screen_root_checking">Checking…</string>
+    <string name="screen_root_available">Granted</string>
+    <string name="screen_root_unavailable">Unavailable</string>
+    <string name="screen_root_unknown">Not checked</string>
+    <string name="screen_channel_auto">Auto</string>
+    <string name="screen_channel_auto_hint">Accessibility when available, otherwise Root</string>
+    <string name="screen_channel_a11y">Accessibility</string>
+    <string name="screen_channel_a11y_hint">Enable it in system settings; reads real view nodes</string>
+    <string name="screen_channel_root">Root</string>
+    <string name="screen_channel_root_hint">Grant su once, survives a reboot</string>
+    <string name="screen_root_grant">Grant Root / re-check</string>
+    <string name="screen_rules_compact">Foreground app only. Passwords and payment pages are never read. Every action shows a banner at the top. You can stop it from the chat page at any time.</string>
+    <!-- Settings: me / conversation & memory -->
+    <string name="profile_open_settings">Settings &amp; profile</string>
+    <string name="settings_group_me">Me</string>
+    <string name="settings_group_dialog">Conversation &amp; Agent</string>
+    <string name="settings_persona">Persona</string>
+    <string name="settings_persona_none">Not set</string>
+    <string name="settings_persona_hint">Tell the AI who you are; applied to every chat</string>
+    <string name="persona_title">Persona</string>
+    <string name="persona_page_hint">Describe who you are, how you want to be addressed, and what kind of answers you prefer. It goes at the very top of the system prompt and applies to every conversation.</string>
+    <string name="persona_placeholder">e.g. I am Zhang, working on pentesting and C++. Be direct, skip the pleasantries, prefer code over prose.</string>
+    <string name="persona_saved">Saved</string>
+    <string name="persona_editor_title">Your persona</string>
+    <string name="persona_char_count">%1$d chars</string>
+    <string name="settings_auto_compact">Auto-compact context</string>
+    <string name="settings_auto_compact_hint">Summarize old turns once the threshold is reached</string>
+    <string name="settings_memory_row_hint">Pull relevant snippets from other chats as background</string>
+    <!-- Onboarding -->
+    <string name="onboard_skip">Skip</string>
+    <string name="onboard_next">Next</string>
+    <string name="onboard_start">Get started</string>
+    <string name="onboard_ask_title">Just type</string>
+    <string name="onboard_ask_body">Type below, then press enter or the arrow. Select several images at once or attach files; hold the empty composer to talk.</string>
+    <string name="onboard_model_title">Models, one tap away</string>
+    <string name="onboard_model_body">Add an endpoint in Settings — official, a relay, or something local — and the model list is pulled straight from it. Tap the top of the chat to switch; context length follows the model.</string>
+    <string name="onboard_think_title">Think harder, drag right</string>
+    <string name="onboard_think_body">Five thinking levels. Hard problems to the right, small talk to the left, turn it off when you don\'t need it.</string>
+    <string name="onboard_memory_title">Don\'t let context fill up</string>
+    <string name="onboard_memory_body" formatted="false">The ring on the left shows context used. Old turns get summarized automatically once you reach the threshold, or tap the ring to compact now. The threshold scales with the window — a 32K model compacts at 70%, a 1M model waits until 90%.</string>
+    <string name="onboard_agent_title">Let it actually act</string>
+    <string name="onboard_agent_body">Turn on Agent and it can read files, run commands and drive the screen. Every action passes through your approval level first.</string>
+    <string name="onboard_preset_title">Set its shape first</string>
+    <string name="onboard_preset_body">A preset is a named system prompt — write it once, use it anywhere. The persona covers \"who I am\", the preset covers \"how to answer\", and the per-chat note covers \"what this one is about\". Presets can be imported straight from a document: plain text, Markdown or JSON all work.</string>
+    <string name="onboard_files_title">One place for the files</string>
+    <string name="onboard_files_body">The workspace is where the AI actually works: reading files, editing code, running scripts. It edits real files, not a block of text in the chat.</string>
+    <string name="onboard_cloud_title">Borrow a machine when yours is too small</string>
+    <string name="onboard_cloud_body">A cloud workspace is a remote Linux box: install packages, compile, run long jobs. Enter the address and token once, then bind it to any conversation.</string>
+
+    <string name="model_picker_title">Choose models</string>
+    <string name="model_picker_all">All</string>
+    <string name="model_picker_none">Clear</string>
+    <string name="model_picker_empty">No matching model</string>
+    <string name="model_picker_search">Search models</string>
+    <string name="model_picker_count">%1$d / %2$d selected</string>
+    <string name="model_picker_vision">vision</string>
+    <string name="model_picker_open">Choose models…</string>
+    <string name="action_confirm">OK</string>
+    <string name="model_picker_all_hint">All (%1$d)</string>
+
+    <string name="runtime_ubuntu">Ubuntu environment</string>
+    <string name="runtime_ubuntu_desc">A real Linux: bash + apt + gcc, runs any terminal command. ~30 MB download, ~300 MB on disk.</string>
+    <string name="runtime_ubuntu_absent">not installed</string>
+    <string name="runtime_ubuntu_unsupported">unsupported</string>
+    <string name="runtime_ubuntu_install">Install</string>
+    <string name="runtime_ubuntu_installing">Installing…</string>
+    <string name="runtime_ubuntu_reinstall">Reinstall</string>
+    <string name="runtime_ubuntu_remove">Remove</string>
+    <string name="runtime_ubuntu_remove_hint">Deletes the whole Ubuntu root filesystem, including packages and files you created inside it. Workspace files are untouched.</string>
+    <string name="runtime_python">Python</string>
+    <string name="runtime_python_desc">CPython inside the Ubuntu environment. Once it is there the AI can run scripts directly, instead of rewriting every one of them as a shell command.</string>
+    <string name="runtime_python_ready">Ready</string>
+    <string name="runtime_python_absent">Not installed</string>
+    <string name="runtime_python_install">Install Python</string>
+    <string name="runtime_python_installing">Installing…</string>
+    <string name="runtime_python_reinstall">Reinstall Python</string>
+    <string name="runtime_repair">Repair environment</string>
+    <string name="runtime_working">Working…</string>
+
+    <!-- File manager -->
+    <string name="files_title">Files</string>
+    <string name="files_bookmarks">Bookmarks</string>
+    <string name="files_bookmarks_empty">No bookmarks yet. Long-press a file or folder and choose Bookmark.</string>
+    <string name="files_tools">Tools</string>
+    <string name="files_back">Back</string>
+    <string name="files_forward">Forward</string>
+    <string name="files_new_folder">New folder</string>
+    <string name="files_refresh">Refresh</string>
+    <string name="files_up">Up</string>
+    <string name="files_no_parent">Already at the top level</string>
+    <string name="files_empty">Empty folder</string>
+    <string name="files_count">%1$d folders · %2$d files</string>
+    <string name="files_copy">Copy</string>
+    <string name="files_move">Move</string>
+    <string name="files_delete">Delete</string>
+    <string name="files_rename">Rename</string>
+    <string name="files_compress">Compress</string>
+    <string name="files_properties">Properties</string>
+    <string name="files_share">Share</string>
+    <string name="files_open_with">Open with</string>
+    <string name="files_bookmark">Bookmark</string>
+    <string name="files_view_text">View as text</string>
+    <string name="files_copy_to_hint">Copy / move lands in the other pane: %1$s</string>
+    <string name="files_failed">Failed: %1$s</string>
+    <string name="files_copied">Copied %1$s → %2$s</string>
+    <string name="files_moved">Moved %1$s → %2$s</string>
+    <string name="files_compressed">Compressed to %1$s</string>
+    <string name="files_bookmarked">Bookmarked</string>
+    <string name="files_delete_title">Delete</string>
+    <string name="files_delete_body">“%1$s” will be deleted permanently. There is no recycle bin.</string>
+    <string name="files_missing">Path does not exist: %1$s</string>
+    <string name="files_no_app">No app can open it</string>
+    <string name="web_preview">Preview</string>
+    <string name="web_preview_title">Web preview</string>
+    <string name="web_preview_refresh">Refresh</string>
+    <string name="web_preview_external">Open in browser</string>
+    <string name="web_preview_failed">Preview server failed: %1$s</string>
+    <string name="web_preview_local_only">The preview server listens on 127.0.0.1 only; other devices on the same Wi-Fi cannot see it.</string>
+    <string name="files_loading">Loading…</string>
+    <string name="files_truncated">File is larger than %1$s; only the beginning is shown.</string>
+    <string name="files_pages">pages</string>
+    <string name="files_prev_page">Previous</string>
+    <string name="files_next_page">Next</string>
+    <string name="files_prop_name">Name</string>
+    <string name="files_prop_path">Path</string>
+    <string name="files_prop_type">Type</string>
+    <string name="files_prop_dir">Folder</string>
+    <string name="files_prop_file">File</string>
+    <string name="files_prop_size">Size</string>
+    <string name="files_prop_modified">Modified</string>
+    <string name="files_prop_permission">Permission</string>
+    <string name="files_prop_children">Children</string>
+    <string name="files_show_hidden">Show hidden files</string>
+    <string name="files_hide_hidden">Hide hidden files</string>
+    <string name="action_create">Create</string>
+
+
+    <string name="mcp_protocol_hint">Standard MCP (JSON-RPC 2.0 / Streamable HTTP): the URL must be the endpoint, usually https://host/mcp; put tokens as Authorization: Bearer xxx.</string>
+    <string name="files_no_permission">Cannot read this folder. Grant “All files access” in Settings → Permissions.</string>
+
+    <!-- ── Workspace: unbound ───────────────────────────── -->
+    <string name="workspace_pick_none">No workspace</string>
+        <string name="workspace_pick_none_desc">Chat only, no files</string>
+
+    <!-- ── Cloud: upload ────────────────────────────────── -->
+    <string name="cloud_upload">Upload</string>
+    <string name="cloud_uploading">Uploading %1$s</string>
+    <string name="cloud_upload_done">Uploaded %1$s (%2$s)</string>
+    <string name="cloud_upload_failed">Upload failed: %1$s</string>
+    <string name="cloud_upload_too_large">Too large; up to %1$s per file.</string>
+    <string name="cloud_upload_old_server">The server is an older build without /fs/upload. Redeploy it from the Cloud Workspace page with the latest bundle (v3 and later).</string>
+
+    <!-- ── Terminal ─────────────────────────────────────── -->
+    <string name="topbar_terminal">Terminal</string>
+    <string name="terminal_new">New session</string>
+    <string name="terminal_close">Close session</string>
+    <string name="terminal_hint">Type a command and send. Each tab is an isolated session: cwd, history and shell are its own.</string>
+
+    <!-- ── MCP ──────────────────────────────────────────── -->
+    <string name="mcp_count_value">%1$d servers · %2$d tools</string>
+    <string name="mcp_intro_title">MCP: give the model external tools</string>
+    <string name="mcp_intro_body">Connect a server and its tools show up in the model\'s hands. Standard MCP (JSON-RPC 2.0 / Streamable HTTP) and local stdio are supported.</string>
+    <string name="mcp_empty_title">No MCP server yet</string>
+    <string name="mcp_section_servers">Connected servers</string>
+    <string name="mcp_section_manage">Manage</string>
+    <string name="mcp_add_first">Add the first server</string>
+    <string name="mcp_status_idle">Not connected</string>
+    <string name="mcp_status_connecting">Connecting…</string>
+    <string name="mcp_status_ready">%1$s · %2$d tools</string>
+    <string name="mcp_status_failed">Connection failed</string>
+
+    <!-- ── Skill tuning ─────────────────────────────────── -->
+    <string name="skill_proactive_chance">Chance per hour</string>
+    <string name="skill_proactive_idle">Minimum idle</string>
+    <string name="skill_proactive_idle_value">%1$d min</string>
+
+    <!-- ── Context & memory tuning ──────────────────────── -->
+    <string name="tuning_title">Context compaction</string>
+    <string name="tuning_entry">Context compaction tuning</string>
+    <string name="tuning_entry_value">%1$d%% · every %2$d user msgs</string>
+    <string name="tuning_compact_group">Compaction</string>
+    <string name="tuning_ratio">Trigger threshold</string>
+    <string name="tuning_compact_hint" formatted="false">Compression fires when either threshold is met: usage reaches the ratio above, or you have sent this many messages since the last summary. The ratio and the count are base values — the real trigger moves later as the window grows (32K at 70%, 1M at 90%). Tap the number to type an exact value; the slider only offers common steps. The summary keeps its fixed four sections — this page only controls *when* it happens.</string>
+    <string name="tuning_compact_policy_hint" formatted="false">The three switches above decide *when* compaction happens. The ratio and the message count are base values — the real trigger moves later as the window grows: a 32K model compacts at 70%, a 1M model waits until 90%. After a compaction the usage drops below the trigger, so it never re-compacts the same turns round after round.</string>
+    <string name="tuning_compact_large_exempt">Don\'t auto-compact large windows</string>
+    <string name="tuning_compact_reserve_output">Reserve room for output</string>
+    <string name="tuning_compact_chunked">Summarize long chats in parts</string>
+
+    <!-- ── Proactive nudge ──────────────────────────────── -->
+    <string name="prompt_proactive_nudge">(Nobody is talking right now. You may speak up on your own: one or two sentences that pick up what was being discussed. Do not mention this note, and do not ask "are you still there".)</string>
+
+    <!-- ── About ────────────────────────────────────────── -->
+    <string name="about_app_name">App</string>
+    <string name="about_author_role">Author · opens profile</string>
+    <string name="about_upstream">Upstream project</string>
+
+    <!-- ── Schedule (extra) ─────────────────────────────── -->
+    <string name="schedule_edit_title">Edit reminder</string>
+
+    <!-- ── Onboarding ───────────────────────────────────── -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get started</string>
+    <string name="onboarding_welcome_body">Type into the box below.\nSay what you want — no manual needed.</string>
+    <string name="onboarding_basic_title">Three spots</string>
+    <string name="onboarding_basic_body">Menu at top left: history and search.\nThe chip by the composer: switch model, toggle thinking.\nThe ⋯ at top right: files, terminal, settings.</string>
+    <string name="onboarding_swipe_hint">Swipe left or right, one card at a time</string>
+    <string name="onboarding_close">Close tour</string>
+    <string name="onboarding_demo_prompt">Organize this project and create a report</string>
+    <string name="onboarding_demo_composer">Message, images or files</string>
+    <string name="onboarding_replay">Replay the quick tour</string>
+    <string name="onboarding_replay_summary">Floating cards, swipe to browse</string>
+    <string name="action_done">Done</string>
+    <string name="skill_tuning_open">Parameters</string>
+    <string name="skill_tuning_title">Proactive message tuning</string>
+    <string name="skill_tuning_hint">Chance is per hour; it only speaks after the configured idle time.</string>
+    <string name="skill_no_desc">This skill has no description.</string>
+    <string name="skills_footer_hint">A skill is text appended to the system prompt while enabled; turning it off removes it entirely.</string>
+    <string name="mcp_footer_hint">When on, this server\'s tools appear in the model\'s tool list; turning it off removes them and keeps the config.</string>
+    <string name="mcp_edit_title">Edit MCP server</string>
+    <string name="mcp_transport_http">HTTP</string>
+    <string name="mcp_transport_stdio">Local stdio</string>
+    <string name="mcp_args">Arguments (space separated)</string>
+    <string name="mcp_env">Environment</string>
+    <string name="mcp_add_header">+ Add header</string>
+    <string name="mcp_add_env">+ Add variable</string>
+    <string name="mcp_stdio_hint">stdio starts a local process. Android has no npx / uvx; install the runtime inside the built-in Ubuntu or Termux and use its absolute path.</string>
+    <string name="mcp_timeout">Timeout</string>
+    <string name="mcp_seconds">s</string>
+    <string name="mcp_test">Test connection</string>
+    <string name="mcp_testing">Testing…</string>
+    <string name="mcp_test_ok">%1$s · %2$d tools</string>
+    <string name="mcp_test_fail">Connection failed: %1$s</string>
+    <string name="mcp_need_url">Enter an endpoint first</string>
+    <string name="mcp_need_command">Enter a command first</string>
+    <string name="mcp_export_all">Export all as JSON</string>
+    <string name="mcp_import_json">Paste JSON</string>
+    <string name="mcp_import_hint">Accepts an mcpServers config or a single { command / url } object. Everything stays editable after import.</string>
+    <string name="mcp_import_action">Import</string>
+    <string name="mcp_import_bad">Parse failed: %1$s</string>
+    <string name="mcp_import_empty">No server found in the JSON</string>
+    <string name="mcp_examples">Standard examples</string>
+    <string name="onboarding_welcome_title">Welcome to DSHA</string>
+    <string name="onboarding_start_button">Get started</string>
+    <string name="provider_name_zhipu">Zhipu GLM</string>
+    <string name="provider_name_moonshot">Moonshot Kimi</string>
+    <string name="provider_name_dashscope">Alibaba DashScope (Qwen)</string>
+    <string name="provider_name_siliconflow">SiliconFlow</string>
+    <string name="provider_name_openrouter">OpenRouter</string>
+    <string name="provider_name_groq">Groq</string>
+    <string name="provider_name_xai">xAI Grok</string>
+    <string name="provider_name_mistral">Mistral</string>
+    <string name="provider_name_gemini">Google Gemini</string>
+    <string name="provider_name_ollama">Ollama (local)</string>
+    <string name="provider_name_lmstudio">LM Studio (local)</string>
+    <string name="speech_language_section">Speech language</string>
+    <string name="tts_language">Text-to-speech</string>
+    <string name="stt_language">Speech-to-text</string>
+    <string name="speech_lang_auto">Match UI</string>
+    <string name="speech_lang_zh">中文</string>
+    <string name="speech_lang_en">English</string>
+    <string name="speech_lang_ja">日本語</string>
+    <string name="screen_pipeline_title">Recognition pipeline</string>
+    <string name="screen_pipeline_layout">Layout (default)</string>
+    <string name="screen_pipeline_layout_hint">Reads the accessibility tree: text, buttons, precise targets. Works for most apps.</string>
+    <string name="screen_pipeline_vision">Screenshot</string>
+    <string name="screen_pipeline_vision_hint">Looks at a screenshot and taps coordinates. For games and canvas UIs that expose no controls. Screenshots stay in memory.</string>
+    <string name="screen_pipeline_hint">Once picked, the AI only gets the tools for that mode — it cannot switch to the other one on its own. Screenshot mode sends the current frame with every observation, along with resolution and scale, for UE/Unity style scenes.</string>
+    <string name="tool_run_steps">%1$d steps</string>
+    <string name="tool_run_expand">Expand details of these %1$d calls</string>
+    <string name="model_params">Model parameters</string>
+    <string name="model_params_on">Thinking · %1$s</string>
+    <string name="model_params_off">Thinking · off</string>
+    <string name="model_group_other">Others</string>
+    <string name="profile_label">Profile</string>
+    <string name="profile_list_title">Model profiles</string>
+    <string name="profile_label_count">%1$s (%2$d profiles)</string>
+    <string name="profile_rename">Rename</string>
+    <string name="model_profile_name_hint">Anything, e.g. “Official” or “Proxy”</string>
+    <string name="model_profile_default_name">Profile</string>
+    <string name="profile_no_key">No API key</string>
+    <string name="profile_new">New profile</string>
+    <string name="profile_name_label">Profile name</string>
+    <string name="profile_delete">Delete this profile</string>
+    <string name="profile_delete_body">Removes this profile’s address, key and model list. Conversations are untouched.</string>
+    <string name="profile_saved">Saved</string>
+    <string name="model_group_count">%1$d</string>
+    <string name="workspace_delete">Delete workspace</string>
+    <string name="workspace_delete_confirm">Delete "%1$s"? Files inside will be removed permanently.</string>
+    <string name="workspace_internal_empty">No internal workspace yet. Create one from the workspace chip in chat.</string>
+    <string name="topbar_mode_cloud">Cloud · %1$s</string>
+    <string name="topbar_mode_internal">Internal workspace</string>
+    <string name="topbar_mode_internal_named">Internal · %1$s</string>
+    <string name="topbar_mode_device">Local folder · %1$s</string>
+    <string name="workspace_folders_group">Saved folders</string>
+    <string name="terminal_ai_footnote">Every command the AI ran is logged here, read-only. Open another tab to type your own.</string>
+
+    <!-- 定时任务动作 -->
+    <string name="schedule_action">Action</string>
+    <string name="schedule_action_remind">Reminder</string>
+    <string name="schedule_action_command">Run command</string>
+    <string name="schedule_action_remind_hint">Post a notification when the time comes.</string>
+    <string name="schedule_action_command_hint">Run a shell command at the scheduled time; output goes into the notification. Works with the app in the background.</string>
+    <string name="schedule_command">Command</string>
+    <string name="schedule_command_placeholder">e.g. cp -r ~/notes ~/backup</string>
+    <string name="schedule_quiet">Stay quiet on success</string>
+    <string name="schedule_quiet_hint">Only notify when the command fails. Good for daily backups and cleanups.</string>
+    <string name="schedule_need_command">Command cannot be empty</string>
+    <string name="schedule_notify_command_ok">%1$s finished</string>
+    <string name="schedule_notify_command_fail">%1$s failed (exit %2$d)</string>
+    <string name="schedule_running">Running command…</string>
+    <string name="schedule_timeout">(killed after timeout)</string>
+    <string name="schedule_no_output">(no output)</string>
+    <string name="schedule_channel_command">Scheduled commands</string>
+
+    <!-- 自定义朗读 -->
+    <string name="tts_channel">Speech channel</string>
+    <string name="tts_channel_system">System voice</string>
+    <string name="tts_channel_deepseek">DeepSeek official</string>
+    <string name="tts_channel_custom">Custom API</string>
+    <string name="tts_channel_hint">The system voice always works; the official voice sounds better but needs an official key; a custom API can point at any OpenAI-compatible speech endpoint.</string>
+    <string name="tts_custom_section">Custom speech API</string>
+    <string name="tts_custom_summary">%1$s · %2$s</string>
+    <string name="tts_custom_summary_empty">Not configured</string>
+    <string name="tts_custom_url">Endpoint</string>
+    <string name="tts_custom_url_placeholder">https://api.openai.com/v1/audio/speech</string>
+    <string name="tts_custom_url_hint">A base URL or the full endpoint both work; /audio/speech is appended when missing.</string>
+    <string name="tts_custom_key">API key</string>
+    <string name="tts_custom_model">Model</string>
+    <string name="tts_custom_model_placeholder">tts-1 / gpt-4o-mini-tts</string>
+    <string name="tts_custom_voice">Voice</string>
+    <string name="tts_custom_voice_placeholder">alloy / nova</string>
+    <string name="tts_custom_format">Format</string>
+    <string name="tts_custom_speed">Speed</string>
+    <string name="tts_custom_headers">Extra headers</string>
+    <string name="tts_custom_headers_placeholder">X-API-Key: sk-…</string>
+    <string name="tts_custom_headers_hint">One Key: Value per line. For gateways that need custom auth headers.</string>
+    <string name="tts_custom_test">Preview</string>
+    <string name="tts_custom_testing">Synthesizing…</string>
+    <string name="tts_custom_test_ok">Synthesized, playing now</string>
+    <string name="tts_custom_failed">Speech failed: %1$s</string>
+    <string name="tts_auto_read">Read replies aloud</string>
+    <string name="tts_auto_read_hint">Speak every finished reply automatically. Off by default.</string>
+    <string name="tts_open_custom">Configure speech API</string>
+
+    <!-- 图片生成 -->
+    <string name="image_api_section">Images</string>
+    <string name="image_api_entry">Image generation</string>
+    <string name="image_api_entry_on">%1$s</string>
+    <string name="image_api_entry_off">Not configured</string>
+    <string name="image_api_url">Endpoint</string>
+    <string name="image_api_url_placeholder">https://api.openai.com/v1/images/generations</string>
+    <string name="image_api_url_hint">An OpenAI-compatible /images/generations endpoint. Once configured, the AI can draw.</string>
+    <string name="image_api_key">API key</string>
+    <string name="image_api_model">Model</string>
+    <string name="image_api_model_placeholder">gpt-image-1 / dall-e-3</string>
+    <string name="image_api_size">Size</string>
+    <string name="image_api_hint">When unset, the drawing tool is not offered to the model, so it asks you to configure it instead of retrying failures. Once configured, just describe the picture in chat (Agent mode on).</string>
+    <string name="image_api_ready">Configured</string>
+    <string name="image_api_ready_hint">Fill in endpoint, key and model, and the AI can draw</string>
+    <string name="image_api_group_connection">Connection</string>
+    <string name="image_api_group_model">Model</string>
+    <string name="image_api_group_output">Output</string>
+    <string name="image_api_model_unset">Not selected</string>
+    <string name="image_api_model_empty">No models yet. Tap "Fetch models" below, or enter one manually.</string>
+    <string name="image_api_model_hint">Fetch from the server, or enter a model id manually</string>
+    <string name="image_api_model_manual_hint">e.g. dall-e-3, flux-schnell</string>
+    <string name="image_api_size_auto">Auto</string>
+    <string name="image_api_size_hint">Auto means the AI decides the shape from what you asked for (portrait, landscape, square) — not always a square. A size pinned here is only a fallback; an explicit request in the chat wins.</string>
+    <string name="image_api_size_custom">Custom size…</string>
+    <string name="image_api_size_custom_hint">WIDTHxHEIGHT, e.g. 1024x1024. Leave empty for auto.</string>
+    <string name="image_drawing">Drawing…</string>
+    <string name="image_generated">Generated image</string>
+    <string name="image_load_failed">Could not load image</string>
+    <string name="image_save">Save image</string>
+    <string name="image_saved">Saved</string>
+    <string name="image_save_failed">Could not save</string>
+    <string name="image_gen_failed">Image generation failed: %1$s</string>
+    <string name="tool_think">Thinking</string>
+    <string name="tool_generate_image">Generate image</string>
+
+    <!-- 文件管理器多选 -->
+    <string name="files_selected_count">%1$d selected</string>
+    <string name="files_select_all">Select all</string>
+    <string name="files_select_invert">Invert</string>
+    <string name="files_select_clear">Clear</string>
+    <string name="files_batch_copy">Copy</string>
+    <string name="files_batch_move">Move</string>
+    <string name="files_batch_delete">Delete</string>
+    <string name="files_batch_delete_title">Delete selected</string>
+    <string name="files_batch_delete_body">%1$d items will be deleted permanently. Continue?</string>
+    <string name="files_batch_done">%1$d items processed</string>
+    <string name="files_swipe_hint">Swipe a row right to select</string>
+    <string name="files_new_file">New file</string>
+
+    <!-- 侧栏新对话 -->
+
+    <!-- MCP 补充 -->
+    <string name="mcp_add_manual">Add server</string>
+    <string name="mcp_add_paste">Paste JSON</string>
+    <string name="mcp_http_title">HTTP</string>
+    <string name="mcp_http_hint">Any endpoint URL, local or remote; HTTPS works too.</string>
+    <string name="prompt_attachments_omitted">(%d older attachment(s) omitted here to save context; ask the user to re-upload if needed)</string>
+    <string name="tuning_compact_by_count">Also compact by message count</string>
+    <string name="tuning_compact_count">Message threshold</string>
+    <string name="tuning_count_unit">msgs</string>
+    <string name="tuning_compact_rules">Extra summary rules</string>
+    <string name="tuning_compact_rules_hint">Appended to the end of the compaction prompt, highest priority. Put what must never be lost here.</string>
+    <string name="tuning_compact_rules_placeholder">e.g. copy every identifier, path and command verbatim; never round numbers or versions.</string>
+    <string name="tool_cancelled">Stopped (interrupted by user; the tool did not finish)</string>
+    <string name="api_test_timeout">Test timed out: no response within 25s. The endpoint may be routing /models to a backend that never answers.</string>
+    <string name="api_key_not_required">No key needed</string>
+
+    <!-- 设置：统一组件 / API 配置页（2.3.6） -->
+    <string name="action_paste">Paste</string>
+    <string name="action_show_secret">Show</string>
+    <string name="action_hide_secret">Hide</string>
+    <string name="clipboard_empty">Nothing to paste</string>
+    <string name="choice_no_match">No matches</string>
+    <string name="api_group_connection">Connection</string>
+    <string name="api_group_limits">Context &amp; output</string>
+    <string name="api_group_advanced">Advanced</string>
+    <string name="api_model_current">Current model</string>
+    <string name="api_model_switcher">Switcher models</string>
+    <string name="api_model_switcher_hint">Chooses which models are listed in the chat\'s model switcher. It doesn\'t change the current model above.</string>
+    <string name="api_state_ready">Ready</string>
+    <string name="api_state_no_key">No API key</string>
+    <string name="api_state_no_model">No model</string>
+    <string name="api_profile_count">%1$d profiles</string>
+    <string name="api_test_need_key">Add an API key first, then test.</string>
+    <string name="profile_current">In use</string>
+    <string name="profile_delete_title">Delete “%1$s”?</string>
+    <string name="about_brand_icons">Model logos</string>
+
+    <!-- 技能 / 运行环境：此前写死在代码里的几句 -->
+    <string name="error_read_failed_short">Couldn\'t read the file</string>
+    <string name="error_install_failed_short">Install failed</string>
+    <string name="error_repair_failed_short">Repair failed</string>
+    <string name="runtime_preparing">Preparing…</string>
+</resources>
+
+

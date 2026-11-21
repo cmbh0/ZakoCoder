@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  界面与文案的默认资源（简体中文）。
+
+  约定：
+  - 这里只放**用户看得见 / 发给模型**的文字；纯标识（"Base URL"、"API Key"、
+    "top_p"、"A" 这类中英同形的）继续留在代码里，不为抽而抽。
+  - 界面文案在 composable 里用 `stringResource(...)`；ViewModel / 数据层用
+    `Res.get(...)` 或 `AppText`（见 data/AppText.kt）。
+  - 英文版在 `values-en/strings.xml`，**两边键名必须一一对应**；加新键时两份一起加。
+  - 语言档位与切换见 data/LocaleHelper.kt。
+-->
+<resources>
+    <string name="app_name">DSHA</string>
+
+    <!-- ── 通用动作 ─────────────────────────────────────── -->
+    <string name="action_cancel">取消</string>
+    <string name="action_save">保存</string>
+    <string name="action_delete">删除</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_close">关闭</string>
+    <string name="action_copy">复制</string>
+    <string name="msg_select_copy">选中复制</string>
+    <string name="msg_select_hint">按住文字拖动选择，松开后点系统菜单里的「复制」</string>
+    <string name="msg_select_done">完成</string>
+    <string name="action_back">返回</string>
+    <string name="action_send">发送</string>
+    <string name="action_clear">清空</string>
+    <string name="action_retry">重试</string>
+    <string name="action_rename">重命名</string>
+    <string name="action_pin">置顶</string>
+    <string name="action_unpin">取消置顶</string>
+
+    <!-- ── 通用标签 / 取值 ──────────────────────────────── -->
+    <string name="label_model">模型</string>
+    <string name="label_provider">服务商</string>
+    <string name="value_follow_system">跟随系统</string>
+    <string name="value_light">浅色</string>
+    <string name="value_dark">深色</string>
+    <string name="conversation_default_title">新对话</string>
+
+    <!-- ── 语言设置（多语言） ───────────────────────────── -->
+    <string name="settings_language">语言</string>
+    <string name="lang_chinese">简体中文</string>
+    <string name="lang_english">English</string>
+
+    <!-- ── 主题色 ───────────────────────────────────────── -->
+    <string name="theme_color_blue">蓝色</string>
+    <string name="theme_color_green">绿色</string>
+    <string name="theme_color_red">红色</string>
+    <string name="theme_color_pink">粉色</string>
+    <string name="theme_color_purple">紫色</string>
+    <string name="theme_color_brown">棕色</string>
+    <string name="theme_color_gray">灰色</string>
+    <string name="a11y_accent_color">%1$s 主题色</string>
+
+    <!-- ── 报错与提示（通用） ───────────────────────────── -->
+    <string name="error_unknown">未知错误</string>
+    <string name="error_network">网络连接失败</string>
+    <string name="error_network_offline">连不上网络，请检查网络或代理后重试</string>
+    <string name="error_network_timeout">连接超时，请稍后重试</string>
+    <string name="error_network_interrupted">连接被中断（服务端或网络波动），请重试</string>
+    <string name="error_network_insecure">安全连接失败，请检查网络环境或证书</string>
+    <string name="error_server_busy">服务端繁忙或临时故障，请稍后重试</string>
+    <string name="error_http_status">服务端返回 HTTP %1$d</string>
+    <string name="error_http_unauthorized">API Key 无效或已过期，请到设置里重新填写</string>
+    <string name="error_http_payment_required">账户余额不足，请充值后重试</string>
+    <string name="error_http_forbidden">当前 API Key 没有访问权限</string>
+    <string name="error_http_not_found">接口不存在，请检查 Base URL 与协议通道</string>
+    <string name="error_http_too_large">这次请求太大（图片或历史过长），请减少内容后重试</string>
+    <string name="error_http_rate_limited">请求太频繁，请稍等片刻再试</string>
+    <string name="error_no_api_key">尚未配置 API Key。请在设置 → API 配置中填写后重试。</string>
+    <string name="error_no_model">还没有选择模型。请在设置 → API 配置里选一个（自定义端点先「测试连接」拉取，或手动填写模型 id）。</string>
+    <string name="error_request_failed">请求失败</string>
+    <string name="error_no_content">模型没有返回内容</string>
+    <string name="error_write_failed">无法写入所选位置</string>
+    <string name="error_delete_failed">删除失败：%1$s</string>
+    <string name="error_import_failed">导入失败：%1$s</string>
+    <string name="export_done">已导出到所选位置</string>
+    <string name="export_failed">导出失败：%1$s</string>
+    <string name="export_failed_short">导出失败</string>
+    <string name="import_read_failed">读取文件失败</string>
+    <string name="list_separator">；</string>
+    <string name="import_note_separator">｜</string>
+
+    <!-- ── 设置：一级页面 ───────────────────────────────── -->
+        <string name="profile_default_name">未设置</string>
+    <string name="profile_title">个人资料</string>
+    <string name="profile_name">名字</string>
+    <string name="profile_change_avatar">更换头像</string>
+    <string name="profile_hint">只保存在本机，不会上传。名字留空时显示「未设置」。</string>
+    <string name="profile_remove_avatar">移除头像</string>
+    <string name="profile_name_hint">未设置</string>
+    <string name="settings_title">设置</string>
+    <string name="settings_data">数据管理</string>
+    <string name="settings_api">API 配置</string>
+    <string name="settings_presets">预设</string>
+    <string name="settings_font_size">字体大小</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_group_account">账户</string>
+    <string name="settings_group_personal">个性化</string>
+    <string name="settings_group_backup">备份</string>
+    <string name="settings_group_reset">重置</string>
+    <string name="settings_group_service">服务</string>
+    <string name="settings_group_auth">鉴权</string>
+    <string name="settings_group_presets">预设</string>
+    <string name="settings_data_summary">导入 / 导出 / 清空</string>
+    <string name="settings_appearance">外观</string>
+    <string name="settings_accent">主题色</string>
+    <string name="settings_auto_collapse">自动折叠思考内容</string>
+    <string name="settings_about_title">关于 DSHA</string>
+    <string name="settings_export_all">导出所有数据</string>
+    <string name="settings_export_all_summary">导出会话、消息与全部版本</string>
+    <string name="settings_import_all">导入所有数据</string>
+    <string name="settings_import_all_summary">支持 Chatbox、DeepSeek 格式，可选增量 / 覆盖同名 / 同名新命名</string>
+    <string name="settings_delete_all">删除所有历史对话</string>
+    <string name="settings_destructive_hint">不可恢复</string>
+    <string name="settings_delete_all_title">删除全部历史对话？</string>
+    <string name="settings_delete_all_body">所有会话、消息与版本都会被清除，且无法恢复。建议先导出一份备份。</string>
+    <string name="settings_delete_all_confirm">全部删除</string>
+    <string name="settings_delete_all_done">已删除全部历史对话</string>
+
+    <!-- ── 设置：API 配置 ───────────────────────────────── -->
+    <string name="api_test">测试连接</string>
+    <string name="api_testing">正在测试…</string>
+    <string name="api_key_unset">未配置</string>
+    <string name="api_test_ok">连接成功，可用模型 %1$d 个</string>
+    <string name="api_test_failed">连接失败：%1$s</string>
+    <string name="api_model_unset">未选择</string>
+    <string name="api_test_no_model_list">端点可访问，但没有 /models 接口（HTTP 404）。模型名请手动填写，对话不受影响。</string>
+    <string name="api_model_empty_hint">还没有模型列表。点「拉取模型列表」从当前端点获取，也可以手动填写。</string>
+    <string name="api_model_manual">手动填写模型</string>
+    <string name="error_base_url_required">请先填写 Base URL</string>
+    <string name="api_base_url_hint">支持 http:// 与 https://。可以只填到域名，保存时自动补 /v1；误粘的 /chat/completions 会被去掉。</string>
+    <string name="api_model_fetch">拉取模型列表</string>
+    <string name="api_model_refetch">重新拉取模型列表</string>
+    <string name="api_model_fetching">正在拉取…</string>
+    <string name="api_model_fetch_ok">已拉取 %1$d 个模型</string>
+    <string name="api_model_fetch_failed">拉取失败：%1$s</string>
+
+    <!-- ── 上下文 / 记忆 ───────────────────────────────── -->
+    <string name="settings_context">上下文窗口</string>
+    <string name="settings_context_hint">决定上下文占用与自动压缩的阈值。默认跟随模型，也可手动锁定。</string>
+    <string name="context_auto">跟随模型</string>
+    <string name="context_128k">128K</string>
+    <string name="context_256k">256K</string>
+    <string name="context_1m">1M（100 万）</string>
+    <string name="context_custom">自定义…</string>
+    <string name="context_custom_title">自定义上下文窗口</string>
+    <string name="context_custom_placeholder">例如 393216</string>
+    <string name="context_tokens">%1$s tokens</string>
+    <string name="settings_max_output">最大输出</string>
+    <string name="max_output_default">默认（不指定）</string>
+    <string name="max_output_custom_title">自定义最大输出</string>
+    <string name="settings_memory_hint">发送时从本对话较早的内容里检索相关片段，作为背景自然融入回答。记忆按对话隔离。</string>
+
+    <!-- ── Agent / 工具 / 终端 / 技能 / MCP ───────────────── -->
+    <string name="composer_agent">Agent</string>
+    <string name="tool_read_file">读取文件</string>
+    <string name="tool_write_file">写入文件</string>
+    <string name="tool_edit_file">修改文件</string>
+    <string name="tool_list_dir">查看目录</string>
+    <string name="tool_run_shell">执行命令</string>
+    <string name="tool_python">运行 Python</string>
+    <string name="tool_web_fetch">抓取网页</string>
+
+    <string name="settings_tools">工具与扩展</string>
+    <string name="settings_agent">Agent 模式</string>
+    <string name="settings_workspace">工作区</string>
+    <string name="settings_workspace_hint">Agent 与终端只能访问这个目录。</string>
+    <string name="settings_terminal">终端</string>
+    <string name="settings_terminal_hint">在工作区里执行 shell 命令。</string>
+    <string name="settings_skills">技能</string>
+    <string name="settings_skills_hint">把一组做法打包成可开关的能力。</string>
+    <string name="settings_mcp">MCP 服务</string>
+    <string name="settings_mcp_hint">连接外部工具服务（HTTP / stdio）。</string>
+    <string name="settings_runtime">运行环境</string>
+    <string name="settings_runtime_hint">Ubuntu 环境：装一次就有 apt、gcc 和 python3，能跑任意脚本。</string>
+
+    <string name="terminal_title">终端</string>
+    <string name="terminal_placeholder">输入命令…</string>
+    <string name="terminal_clear">清屏</string>
+    <string name="terminal_busy">执行中…</string>
+
+    <string name="skills_title">技能</string>
+    <string name="skills_empty">还没有技能。把包含 SKILL.md 的 zip 丢进来，或直接写一个。</string>
+    <string name="skills_empty_title">还没有技能</string>
+    <string name="skills_export">导出</string>
+    <string name="skills_install_zip">安装 zip</string>
+    <string name="skills_delete">删除</string>
+    <string name="skills_enabled_count">已启用 %1$d 个</string>
+    <string name="skills_installed">已安装 %1$d 个技能</string>
+
+    <string name="mcp_title">MCP 服务</string>
+    <string name="mcp_empty">还没有配置。MCP 让模型调用外部工具（搜索、数据库、公司内部服务）。</string>
+    <string name="mcp_add">添加服务</string>
+    <string name="mcp_name">名称</string>
+    <string name="mcp_endpoint">地址（HTTP）</string>
+    <string name="mcp_command">启动命令（stdio）</string>
+    <string name="mcp_headers">请求头（一行一个，Key: Value）</string>
+    <string name="mcp_connect">连接</string>
+    <string name="mcp_disconnect">断开</string>
+    <string name="mcp_ready">已连接 · %1$d 个工具</string>
+    <string name="mcp_failed">连接失败：%1$s</string>
+
+    <string name="runtime_title">运行环境</string>
+
+    <!-- ── 设置：导入导出 ───────────────────────────────── -->
+    <string name="import_reading">读取中…（大文件需要一会儿）</string>
+    <string name="import_working">正在导入…</string>
+    <string name="import_progress">已处理 %1$d%%</string>
+    <string name="import_mode_title">导入方式</string>
+    <string name="import_mode_merge">增量（只导入本机没有的对话）</string>
+    <string name="import_mode_replace_same">覆盖同名（同名对话替换为本包内容）</string>
+    <string name="import_mode_rename">同名新命名（两条都留，新的加「副本」后缀）</string>
+    <string name="import_done">导入完成（%1$s）：会话 %2$d 个 · 消息 %3$d 条</string>
+    <string name="import_done_expected"> · 归档共 %1$d 个会话</string>
+    <string name="import_done_duplicates"> · 已有 %1$d 个</string>
+    <string name="import_done_failed"> · %1$d 个未能导入：%2$s</string>
+    <string name="import_fail_item">%1$s ×%2$d</string>
+    <string name="import_failed_titles">（%1$s）</string>
+    <string name="import_fail_too_large">会话文件过大</string>
+    <string name="import_fail_unreadable">会话文件损坏</string>
+    <string name="import_fail_empty">没有可导入的消息</string>
+    <string name="import_fail_broken_tree">消息结构异常</string>
+    <string name="import_fail_missing_entry">归档缺少会话文件</string>
+    <string name="import_fail_write_failed">写入失败</string>
+    <string name="err_archive_damaged">压缩包不完整或已损坏（可能下载中断），请重新导出后再试</string>
+
+    <!-- ── 设置：预设 ───────────────────────────────────── -->
+    <string name="preset_sheet_title">预设</string>
+    <string name="preset_sheet_subtitle">只作用于本对话。按列表顺序拼进提示词，越靠前，影响越大。</string>
+    <string name="preset_sheet_count">%1$d / %2$d</string>
+    <string name="preset_sheet_empty">还没有预设</string>
+    <string name="preset_sheet_empty_hint">预设是一段可命名的提示词，写好后回来启用。</string>
+    <string name="preset_sheet_empty_action">去设置里新建</string>
+    <string name="preset_sheet_manage">管理预设</string>
+    <string name="preset_sheet_done">完成</string>
+    <string name="preset_sheet_more">对话设置 · 标题 / 提示词 / 导出</string>
+    <string name="preset_count_total">%1$d 条</string>
+    <string name="preset_count_empty">空</string>
+    <string name="preset_empty">还没有预设</string>
+    <string name="preset_intro">预设是可插拔的提示词模块：写一段话，需要的时候挂上去。这里只管新建和修改；用哪几条，在每个对话右上角「⋯ → 预设」里单独勾选 —— 一个话题开的东西不会影响另一个话题。</string>
+    <string name="preset_empty_hint">把常用的提示词存成预设，比如「代码审查」「小说搭档」，需要时一键开关。</string>
+    <string name="preset_new">新建预设</string>
+    <string name="preset_import">从文档导入</string>
+    <string name="preset_import_hint">挑一个文件当预设：纯文本、Markdown、JSON、YAML、docx 都行，导入后可以再改。</string>
+    <string name="err_preset_pdf">PDF 里抽不出文字（Android 自带的 PDF 库只能渲染）。先把内容复制成文本文件再导入。</string>
+    <string name="err_preset_not_text">这个文件里没有可读的文字。</string>
+    <string name="err_preset_empty">这个文件是空的，导入不了。</string>
+    <string name="preset_new_hint">一段可复用的提示词，随时开关</string>
+    <string name="preset_order_hint">按列表顺序拼进系统提示词，排在会话补充提示词之前。</string>
+    <string name="preset_delete_action">删除预设</string>
+    <string name="preset_delete_title">删除预设「%1$s」？</string>
+    <string name="preset_delete_body">删除后不再参与任何对话的提示词，已有对话的内容不受影响。</string>
+    <string name="preset_edit">编辑预设</string>
+    <string name="preset_name_hint">名称，例如「第三人称叙事」</string>
+    <string name="preset_body_hint">提示词正文。写清楚要模型遵守什么、避免什么。</string>
+
+    <!-- ── 设置：字体大小 ───────────────────────────────── -->
+    <string name="font_step_small">小</string>
+    <string name="font_step_smaller">较小</string>
+    <string name="font_step_standard">标准</string>
+    <string name="font_step_larger">较大</string>
+    <string name="font_step_large">大</string>
+    <string name="font_step_largest">特大</string>
+    <string name="font_preview_label">预览文字大小</string>
+    <string name="font_scale_hint">将会影响对话正文、思考内容与全部界面文字。</string>
+
+    <!-- ── 设置：关于 ───────────────────────────────────── -->
+    <string name="about_version">版本</string>
+    <string name="about_package">包名</string>
+    <string name="about_project">项目</string>
+    <string name="about_project_url">项目地址</string>
+    <string name="about_licenses">开源许可</string>
+    <string name="about_icon">图标</string>
+    <string name="about_libs_net">网络与序列化</string>
+    <string name="about_libs_storage">存储与界面</string>
+    <string name="about_libs_parsing">解析与高亮</string>
+    <string name="about_libs_crypto">加密</string>
+    <string name="about_libs_math">公式</string>
+    <string name="about_libs_diagram">图表</string>
+    <string name="about_refs">参考项目</string>
+    <string name="about_ref_zakocoder">本机 Ubuntu（proot）运行环境的实现参考</string>
+    <string name="about_ref_operit">MCP 工具接入与 AI 绘图流程的实现参考</string>
+    <string name="about_ai_disclaimer">生成内容由模型产出，请自行判断使用。</string>
+
+    <!-- ── 会话（仓库 / 顶栏 / 抽屉共用） ───────────────── -->
+    <string name="conversation_fork_suffix">（副本）</string>
+    <string name="conversation_fork_suffix_n">（副本 %1$d）</string>
+
+    <!-- ── 聊天页 ───────────────────────────────────────── -->
+    <string name="chat_export_empty">当前对话尚未保存，无可导出内容</string>
+    <string name="chat_scroll_bottom">回到底部</string>
+    <string name="chat_banner_close">关闭提示</string>
+    <string name="chat_vision_unsupported">「%1$s」不支持识图，请先用「思考档位」换成支持识图的模型（如 DeepSeek V4.1 Flash）。</string>
+    <string name="msg_edit_input">修改输入</string>
+    <string name="msg_delete_title">删除这条消息？</string>
+    <string name="msg_delete_body">该消息的所有版本都会被一起删除，删除后不可恢复。</string>
+
+    <!-- ── 附件 ─────────────────────────────────────────── -->
+    <string name="attach_read_failed">附件读取失败</string>
+    <string name="attach_default_file_name">文件</string>
+    <string name="err_file_oversize">文件太大（上限 %1$d MB）</string>
+    <string name="attach_auto_txt">内容较长，已转成 TXT 附件（%1$d 字）</string>
+    <string name="attach_file_open_failed">没有能打开这个文件的应用</string>
+    <string name="attach_camera_file_failed">无法创建拍照文件</string>
+    <string name="attach_default_text_name">未命名.txt</string>
+    <string name="err_image_too_big">图片超过 24MB，请先压缩</string>
+    <string name="err_image_read">无法读取这张图片</string>
+    <string name="err_file_read">无法读取这个文件</string>
+    <string name="err_file_too_big">文件太大（超过 %1$dKB）</string>
+    <string name="err_not_plain_text">看起来不是纯文本文件</string>
+    <string name="err_text_too_long">文本太长（%1$d 字，上限 %2$d）</string>
+    <string name="err_file_empty">文件是空的</string>
+    <string name="err_doc_legacy">不支持旧版 .doc / .xls 格式，请先另存为 .docx</string>
+    <string name="err_pdf_too_big">PDF 超过 40MB，请先拆分</string>
+    <string name="err_pdf_open">无法打开这个 PDF</string>
+    <string name="err_pdf_no_pages">这个 PDF 没有页面</string>
+    <string name="pdf_page_name">%1$s · 第 %2$d 页</string>
+    <string name="warn_pdf_truncated">PDF 共 %1$d 页，只带了前 %2$d 页（每页约 1024 token，再多会挤爆上下文）</string>
+    <string name="err_docx_not_zip">这是压缩包，但不是 .docx 文档（没找到 word/document.xml）</string>
+    <string name="err_docx_too_big">文件超过 40MB，请先精简</string>
+    <string name="err_docx_empty">这份 docx 里没有可读的文字</string>
+    <string name="err_docx_too_long">文档太长（%1$d 字，上限 %2$d）</string>
+
+    <!-- ── 模型列表 / 统计 / 压缩（ViewModel 侧） ───────── -->
+    <string name="models_fetched">已获取 %1$d 个模型</string>
+    <string name="models_fetch_failed">获取失败：%1$s</string>
+    <string name="models_fetch_needs_key">（需先配置 API Key）</string>
+    <string name="compact_too_few">消息还少，暂时不需要压缩。</string>
+    <string name="compact_too_long">上下文太长，压不动了：光是最近这些就装不进窗口。换个模型，或者新开一段对话。</string>
+    <string name="compact_failed">压缩失败</string>
+    <string name="compact_failed_detail">压缩失败：%1$s</string>
+    <string name="compact_divider_running">正在整理上下文</string>
+    <string name="compact_divider_done">上下文已压缩 · %1$d 条</string>
+    <string name="compact_divider_tokens">%1$s → %2$s tokens</string>
+    <string name="compact_divider_usage">占用 %1$s / %2$s tokens</string>
+
+    <!-- ── 服务商 ───────────────────────────────────────── -->
+    <string name="provider_name_openai">OpenAI 官方</string>
+    <string name="provider_name_deepseek">DeepSeek 官方</string>
+    <string name="provider_name_custom">自定义</string>
+
+    <!-- ── 会话模式 / 思考档位 ──────────────────────────── -->
+    <string name="mode_creative_title">创作模式</string>
+    <string name="mode_roleplay_title">扮演模式</string>
+    <string name="mode_creative_empty">创作正文</string>
+    <string name="mode_roleplay_empty">推进剧情</string>
+    <string name="mode_creative_caption">AI 创作正文，保持文风与人称统一</string>
+    <string name="mode_roleplay_caption">AI 扮演角色，以对话和动作推进剧情</string>
+    <string name="reasoning_off">关闭</string>
+    <string name="reasoning_low">low</string>
+    <string name="reasoning_medium">medium</string>
+    <string name="reasoning_xhigh">xhigh</string>
+    <string name="model_panel_thinking_mode">思考模式</string>
+    <string name="model_panel_effort">思考程度</string>
+    <string name="model_panel_models">模型</string>
+    <string name="model_panel_manage">管理配置</string>
+    <string name="model_panel_count">%1$d 个模型</string>
+    <string name="model_panel_default_config">默认配置</string>
+    <string name="approval_chip">审批</string>
+
+    <string name="reasoning_high">high</string>
+    <string name="reasoning_max">max</string>
+
+    <!-- ── 会话列表分组 ─────────────────────────────────── -->
+    <string name="group_pinned">置顶</string>
+    <string name="group_today">今天</string>
+    <string name="group_yesterday">昨天</string>
+    <string name="group_week">7 天内</string>
+    <string name="group_month">30 天内</string>
+    <string name="group_earlier">更早</string>
+    <string name="profile_more">更多</string>
+    <string name="group_older">更早</string>
+
+    <!-- ── Markdown 渲染 ────────────────────────────────── -->
+    <string name="md_code_label">代码</string>
+    <string name="md_line_count">· %1$d 行</string>
+    <string name="md_copied">已复制</string>
+    <string name="md_copy_code">复制代码</string>
+    <string name="md_collapse">收起</string>
+    <string name="md_expand_all">展开全部（%1$d 行）</string>
+    <string name="md_image">图片</string>
+
+    <!-- ── 消息索引条（占位摘要） ───────────────────────── -->
+    <string name="msg_index_empty">（无内容）</string>
+    <string name="msg_index_attachments">（附件 %1$d）</string>
+    <string name="msg_index_image">（图片）</string>
+    <string name="msg_index_file">（文件·%1$s）</string>
+
+    <!-- ── 备份：来源与导入反馈 ─────────────────────────── -->
+    <string name="backup_source_simplechat">SimpleChat 备份</string>
+    <string name="backup_source_chatbox">Chatbox 备份</string>
+    <string name="backup_source_deepseek">DeepSeek 导出</string>
+    <string name="err_deepseek_version">这个 DeepSeek 归档是第 %1$d 版，本应用只认第 %2$d 版</string>
+    <string name="images_skipped_no_vision">当前模型不支持图片，已忽略 %1$d 张</string>
+    <string name="images_skipped_unreadable">有 %1$d 张图片格式无法识别或文件已损坏，本轮未发送</string>
+    <string name="warn_deepseek_limited">搜索与读链步骤、非图片附件未导入</string>
+    <string name="err_unrecognised_file">认不出这份文件：既不是压缩包，也不是 JSON</string>
+    <string name="err_unrecognised_format">认不出这份文件（format=%1$s）</string>
+    <string name="err_scratch_dir">临时目录不可用：%1$s</string>
+    <string name="err_no_manifest">压缩包里没有 manifest.json，不像是 Chatbox 备份</string>
+    <string name="err_manifest_parse">manifest.json 解析失败</string>
+    <string name="err_not_chatbox">不是 Chatbox 的备份（format=%1$s）</string>
+    <string name="err_no_sessions">这份备份里没有可导入的会话</string>
+    <string name="err_not_our_backup">不是本应用的备份文件（format=%1$s）</string>
+    <string name="warn_dropped_images">有 %1$d 张图片没能取回（归档里没有原件）</string>
+    <string name="warn_single_branch">Chatbox 只导入了当时正在看的那条分支（它的分支语义与本地不同，未展开）</string>
+    <string name="import_image_name">图片 %1$d×%2$d</string>
+    <string name="import_image_default_name">导入的图片</string>
+    <string name="import_conversation_default">导入的对话</string>
+
+    <!-- ── 导出 Markdown 文稿的模板 ─────────────────────── -->
+    <string name="export_unknown_model">未知模型</string>
+    <string name="export_meta">共 %1$d 条 · 导出于 %2$s</string>
+    <string name="export_scope_note">仅含当前分支、当前选中版本的正文，不含思考内容</string>
+    <string name="export_role_me">我</string>
+    <string name="export_role_ai">AI</string>
+    <string name="export_image_attachment">🖼 图片附件：%1$s（%2$d×%3$d，正文导出版不含图片数据）</string>
+    <string name="export_attachment">附件：%1$s</string>
+
+    <!-- ── 内置预设（会写进库，按界面语言取） ───────────── -->
+
+    <!-- ── 发给模型的提示词（按界面语言取） ─────────────── -->
+    <string name="prompt_title_system">你是一个起标题的助手。用不超过 12 个字概括这段对话在聊什么。只输出标题本身：不要引号、不要书名号、不要结尾标点、不要任何解释或前缀。</string>
+    <string name="prompt_recap_intro">以下是此前对话的摘要，是这段对话唯一的历史参考。不要复述摘要，直接基于它继续。\n\n</string>
+    <string name="prompt_role_user">【用户】</string>
+    <string name="prompt_role_assistant">【助手】</string>
+
+    <!-- ==== 来自 g2 组 ==== -->
+<!-- 输入栏（InputBar） -->
+    <string name="input_hint">发消息</string>
+    <string name="input_fullscreen_title">全屏输入</string>
+    <string name="input_fullscreen_done">完成</string>
+    <string name="input_fullscreen_count">%1$d 字</string>
+    <string name="input_cancel_edit">取消编辑</string>
+    <string name="input_settings">对话设置</string>
+    <string name="input_thinking">思考档位</string>
+    <string name="input_stop">停止生成</string>
+    <string name="input_send">发送</string>
+    <string name="input_attach_collapse">收起附件菜单</string>
+    <string name="input_attach_add">添加图片或文件</string>
+
+    <!-- 面板一：思考档位 + 模型列表 -->
+    <string name="input_model_unsupported">该模型不支持</string>
+    <string name="input_thinking_hint">档位越高，模型在回答前的思维链越长、耗时与成本越高。</string>
+    <string name="input_thinking_unsupported">当前模型不支持思考模式，切换模型后可用。</string>
+    <string name="models_refresh">拉取列表</string>
+    <string name="models_refreshing">拉取中…</string>
+    <string name="models_empty">暂无模型列表，点右上角拉取。</string>
+    <string name="model_tag_vision">识图</string>
+    <string name="model_tag_thinking">思考</string>
+    <string name="model_panel_title">选择模型</string>
+    <string name="model_current">当前模型</string>
+
+    <!-- 面板二：上下文占用 + 对话统计 -->
+    <string name="stats_context_usage">上下文占用</string>
+    <string name="stats_tokens_estimate">%1$s / %2$s tokens（估算）</string>
+    <string name="stats_compacted_saving">压缩已省下约 %1$s tokens</string>
+    <string name="stats_title">对话统计</string>
+    <string name="stats_total_tokens">本地内容合计</string>
+    <string name="stats_message_count">消息条数</string>
+    <string name="stats_messages">%1$d 条</string>
+    <string name="stats_avg_ttft">平均首字延迟</string>
+    <string name="stats_avg_tps">平均生成速度</string>
+    <string name="stats_total_thinking">累计思考时长</string>
+    <string name="stats_seconds">%1$d 秒</string>
+
+    <!-- 上下文压缩 -->
+    <string name="compact_title">上下文压缩</string>
+    <string name="compact_note">只影响发给模型的内容，本地消息不受影响。</string>
+    <string name="compact_running">正在生成前情提要…</string>
+    <string name="compact_summarized">已总结较早的对话</string>
+    <string name="compact_redo">重新压缩</string>
+    <string name="compact_discard">放弃</string>
+    <string name="compact_start">压缩上下文</string>
+    <string name="compact_desc">总结较早的对话，生成一份自包含的摘要；本地消息不删除。</string>
+
+    <!-- 面板四：对话设置 -->
+    <string name="input_conversation_name">对话名称</string>
+    <string name="input_conversation_name_hint">给这个对话起个名字</string>
+    <string name="input_extra_prompt">会话补充提示词</string>
+    <string name="input_extra_prompt_hint">本会话的设定，拼在预设之后</string>
+    <string name="input_prompt_preview">预览最终提示词</string>
+    <string name="input_prompt_empty">最终提示词：空</string>
+    <string name="input_prompt_blank">（未启用预设，也没有补充提示词）</string>
+    <string name="input_sampling">采样参数</string>
+    <string name="input_param_temperature">温度 temperature</string>
+    <string name="input_param_temp_disabled">思考模式下由服务端接管，不生效</string>
+    <string name="input_param_top_p_disabled">仅思考模式生效</string>
+    <string name="input_param_fast">快速模式 fast</string>
+    <string name="input_param_fast_hint">向支持它的端点发送 fast 参数（GPT 系）。不支持时会报 400，关掉即可</string>
+    <string name="stream_retrying">连接不稳定，正在自动重试 %1$d/%2$d…</string>
+    <string name="stream_auto_resume">连接中断，正在接着上文继续（%1$d/%2$d）…</string>
+    <string name="queue_title">排队中 · 这一轮说完就按顺序发出</string>
+    <string name="queue_remove">撤下这条</string>
+    <string name="artifacts_title">本轮产物 · %1$d 个文件</string>
+    <string name="artifacts_more">查看全部 %1$d 个产物</string>
+    <string name="artifact_open_failed">打不开这个文件：%1$s</string>
+    <string name="input_export_title">导出当前对话</string>
+    <string name="input_export_hint">Markdown 文稿 · 或 JSON 备份</string>
+    <string name="input_export">导出</string>
+    <string name="input_export_markdown">Markdown 文稿</string>
+    <string name="input_export_json">JSON 备份</string>
+
+    <!-- ==== 来自 g3 组 ==== -->
+<!-- ── 消息列表 / 消息操作（MessageList.kt、MessageEditDialog.kt、MessageIndex.kt） ── -->
+    <string name="msg_regenerate">重新生成</string>
+    <string name="msg_rewind">回滚到此处</string>
+    <string name="msg_rewind_title">回滚到这条回复之前？</string>
+    <string name="msg_rewind_body">这条回复之后的所有文件改动会被撤销：新建的文件删掉，改过的还原成原内容。对话也会退回到这里——旧分支不会消失，切一下版本号还能找回来。</string>
+    <string name="rewind_will_delete">将删除</string>
+    <string name="rewind_will_restore">将还原</string>
+    <string name="rewind_empty">这条消息之后没有文件改动，只会截断对话。</string>
+    <string name="msg_rewind_note">只覆盖 AI 通过写入 / 编辑工具做的改动；用命令（run_shell）直接改写的文件无法预知，不在快照范围内。</string>
+    <string name="msg_rewind_done">已回滚 %1$d 个文件</string>
+    <string name="msg_continue">继续生成</string>
+    <string name="msg_fork_from_here">从这里新建对话</string>
+    <string name="msg_expand_all">展开全部</string>
+    <string name="msg_variant_prev">上一个版本</string>
+    <string name="msg_variant_next">下一个版本</string>
+    <string name="msg_edit_title">修改回复</string>
+    <string name="msg_save_and_send">保存并发送</string>
+    <string name="msg_index_no_messages">暂无消息</string>
+
+    <!-- ── 过程流（ProcessFlow.kt） ───────────────────────────── -->
+    <string name="process_collapse">折叠</string>
+    <string name="process_expand">展开</string>
+
+    <!-- ── 附件（Attachments.kt） ─────────────────────────────── -->
+    <string name="attach_remove">移除附件</string>
+    <string name="attach_char_count">%1$d 字</string>
+    <string name="attach_camera">拍照</string>
+    <string name="attach_gallery">相册</string>
+    <string name="attach_file">文件</string>
+    <string name="attach_viewer_multi">　（本条共 %1$d 张，此处只放大第一张）</string>
+
+    <!-- ── 顶栏（TopBar.kt） ─────────────────────────────────── -->
+    <string name="topbar_history">历史对话</string>
+    <string name="topbar_new_chat">新建对话</string>
+
+    <!-- ── 空态（EmptyState.kt） ─────────────────────────────── -->
+    <string name="empty_greeting">你好，我能帮什么忙吗？</string>
+
+    <!-- ==== 来自 g4 组 ==== -->
+<!-- ── 侧拉抽屉（历史） ─────────────────────────────── -->
+    <string name="hist_empty">暂无会话</string>
+    <string name="hist_selected_count">已选择 %1$d 项</string>
+    <string name="hist_multi_select">多选</string>
+
+    <!-- ── 会话重命名 / 删除确认弹窗（RootScreen） ──────── -->
+    <string name="hist_rename_title">重命名对话</string>
+    <string name="hist_delete_title">删除后，该对话将不可恢复</string>
+    <string name="hist_delete_body">该对话的所有消息与版本都会被一并清除</string>
+    <string name="hist_delete_confirm">删除该对话</string>
+    <string name="hist_delete_selected_title">删除后，这 %1$d 个对话将不可恢复</string>
+    <string name="hist_delete_selected_body">它们的所有消息与版本都会被一并清除</string>
+
+    <!-- ── 全屏搜索页 ───────────────────────────────────── -->
+    <string name="search_hint">搜索对话内容…</string>
+    <string name="search_prompt">输入关键词，搜索标题和正文</string>
+    <string name="search_no_result">没有匹配的对话或消息</string>
+
+    <!-- ═══════════════════════════════════════════════════════
+         扩展通道（Anthropic 兼容协议，对齐官方 Chat Demo）
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- 智能搜索 / 链接阅读 -->
+    <string name="web_search">智能搜索</string>
+    <string name="web_search_on">已开启智能搜索</string>
+    <string name="web_search_off">智能搜索已关闭</string>
+    <string name="search_searching">搜索中…</string>
+    <string name="search_image_searching">图像搜索中…</string>
+    <string name="search_intro">搜索</string>
+    <string name="search_found_one">搜索到 1 个网页</string>
+    <string name="search_found_many">搜索到 %1$d 个网页</string>
+    <string name="search_read_one">已阅读 1 个网页</string>
+    <string name="search_read_many">已阅读 %1$d 个网页</string>
+    <string name="search_failed">联网搜索暂不可用</string>
+    <string name="search_no_content">未搜索到合适内容</string>
+    <string name="search_message_no_content">未搜索到相关内容</string>
+    <string name="search_stopped">搜索已停止</string>
+    <string name="search_deep_searching">正在搜索</string>
+    <string name="search_open_one">浏览 1 个页面</string>
+    <string name="search_open_many">浏览 %1$d 个页面</string>
+    <string name="search_open_failed">浏览页面失败</string>
+    <string name="search_open_failed_tip">浏览失败</string>
+    <string name="search_find_keyword">查找关键词</string>
+    <string name="search_find_failed">查找失败</string>
+    <string name="search_find_failed_tip">未查找到相关内容</string>
+    <string name="search_reading">正在阅读</string>
+    <string name="search_browsing">正在浏览网页</string>
+    <string name="search_view_all">查看全部</string>
+    <string name="search_results">搜索结果</string>
+    <string name="search_panel_empty">这次没有可展示的来源</string>
+
+    <!-- 思考标题（扩展通道用「已思考（用时 N 秒）」的官方措辞） -->
+    <string name="thinking_running">思考中</string>
+    <string name="thinking_done">已深度思考</string>
+    <string name="thinking_done_seconds">已深度思考（用时 %1$d 秒）</string>
+    <string name="thinking_stopped">已停止</string>
+
+    <!-- 安全拒绝 -->
+
+    <!-- 时间地点提醒（latest_reminder 的第 5 项与界面文案） -->
+    <string name="prompt_language_name">中文</string>
+
+    <!-- 设置：协议通道 / 搜索 / 地区 -->
+    <string name="settings_api_style">协议通道</string>
+    <string name="api_style_auto">自动（按端点选择）</string>
+    <string name="api_style_openai">OpenAI 兼容</string>
+    <string name="api_style_anthropic">Anthropic 兼容（扩展）</string>
+    <string name="api_style_responses">OpenAI Responses（Codex / GPT-5）</string>
+    <string name="settings_web_search">智能搜索</string>
+    <string name="settings_web_search_hint">开启后模型可按需联网搜索；仅在扩展通道上可用。</string>
+    <string name="settings_location">地区</string>
+    <string name="settings_location_hint_short">用于时间地点提醒</string>
+    <string name="settings_location_placeholder">城市或国家，例如「杭州」</string>
+
+    <!-- ── 语音输入（系统识别服务） ───────────────────────── -->
+    <string name="voice_input">语音输入</string>
+    <string name="voice_stop">结束录音</string>
+    <string name="voice_unavailable">当前设备没有可用的语音识别服务</string>
+    <string name="voice_empty">没有听清，请再说一次</string>
+    <string name="voice_error_audio">录音出错，请重试</string>
+    <string name="voice_error_permission">没有麦克风权限，无法语音输入</string>
+    <string name="voice_error_network">语音识别需要网络，请检查网络后重试</string>
+    <string name="voice_error_busy">识别服务正忙，请稍后再试</string>
+    <string name="voice_error_server">识别服务出错了，请稍后再试</string>
+    <string name="voice_permission_denied">未授予麦克风权限，语音输入不可用</string>
+    <string name="voice_listening">正在聆听…松手结束</string>
+    <string name="input_hint_hold_to_talk">点击输入文字或按住说话</string>
+
+    <!-- ── 朗读（系统 TTS） ──────────────────────────────── -->
+    <string name="tts_speak">朗读</string>
+    <string name="tts_stop">停止朗读</string>
+    <string name="tts_failed">朗读失败，请稍后再试</string>
+    <string name="tts_empty">这条没有可朗读的正文</string>
+    <string name="tts_unavailable">这台设备没有可用的语音合成引擎，请在系统设置里安装 TTS 引擎</string>
+    <!-- 朗读音色（设置） -->
+    <string name="tts_voice">朗读音色</string>
+    <string name="tts_voice_default">系统默认</string>
+    <string name="tts_voice_online">需联网</string>
+    <string name="tts_voice_loading">正在读取系统音色…</string>
+    <string name="tts_voice_empty">这台设备上没有可用的语音合成引擎。安装一个系统 TTS 引擎（如「Google 语音服务」）后回到这里即可。</string>
+    <string name="tts_voice_hint">音色由系统语音合成引擎提供。「需联网」的音色在离线时可能读不出声。</string>
+    <string name="tts_voice_preview">试听</string>
+    <string name="tts_voice_preview_running">正在试听…再点一次可停止</string>
+    <string name="tts_voice_preview_text">你好，这是一段试听，用来挑选朗读音色。</string>
+    <!-- DeepSeek 官方 TTS（/v1/tools/tts，音色 stella / tide） -->
+    <string name="tts_voice_stella">Stella（女声 · DeepSeek 官方）</string>
+    <string name="tts_voice_tide">Tide（男声 · DeepSeek 官方）</string>
+    <string name="tts_voice_official_section">DeepSeek 官方音色</string>
+    <string name="tts_voice_official_hint">官方音色需要：「服务商」为 DeepSeek 官方、Base URL 指向 api.deepseek.com，并已填写 API Key。其余服务商请用上方系统音色。</string>
+    <string name="tts_official_unavailable">当前服务商不支持 DeepSeek 官方朗读，请到设置里换回系统音色</string>
+    <string name="tts_official_failed">官方朗读失败：%1$s</string>
+    <string name="tts_official_empty">这段内容没有可朗读的正文（代码块与表格会被跳过）</string>
+
+    <!-- ── Mermaid 图表 ──────────────────────────────────── -->
+    <string name="mermaid_label">图表</string>
+    <string name="mermaid_show_code">代码</string>
+    <string name="mermaid_show_diagram">图表</string>
+    <string name="mermaid_render_failed">图表渲染失败，以下是原始代码</string>
+    <string name="mermaid_loading">图表生成中…</string>
+    <string name="settings_export_archive">导出全部对话（ZIP 归档）</string>
+    <string name="settings_export_archive_summary">包含所有对话与附件的完整备份，另附每个对话的 Markdown 文稿；可直接用于导入恢复。</string>
+
+    <!-- ── 工作区 / 权限 / 操作屏幕（v1.2.1） ───────────────── -->
+    <string name="settings_screen">操作屏幕</string>
+    <string name="settings_screen_hint">让 Agent 看界面、点按钮、填表单。</string>
+    <string name="settings_permissions">权限管理</string>
+    <string name="settings_permissions_hint">查看并授予运行时需要的系统权限。</string>
+
+    <string name="mention_title">引用能力包</string>
+    <string name="mention_kind_skill">技能</string>
+    <string name="mention_kind_mcp">MCP</string>
+
+    <string name="workspace_title">工作区</string>
+    <!-- 设置工作区（三选一） -->
+    <string name="workspace_pick_title">设置工作区</string>
+    <string name="workspace_pick_subtitle">给 Agent 一个专属的文件环境。读写和命令都只在这个目录里发生。</string>
+    <string name="workspace_pick_internal">内置工作区</string>
+    <string name="workspace_pick_internal_desc">在应用内创建，不需要任何权限</string>
+    <string name="workspace_pick_internal_named">内置工作区 · %1$s</string>
+    <string name="workspace_internal_root">内置工作区（根目录）</string>
+    <string name="workspace_pick_device">选择文件夹</string>
+    <string name="workspace_pick_device_desc">从设备里挑一个已有目录</string>
+    <string name="workspace_pick_cloud">云端环境</string>
+    <string name="workspace_pick_cloud_desc">连一台远端机器，文件与命令都在那边</string>
+    <string name="workspace_new_internal">新建内置文件夹</string>
+    <string name="workspace_new_internal_desc">在应用私有目录下开一个，可命名</string>
+    <string name="workspace_folder_name_hint">文件夹名，如 project-a</string>
+    <string name="workspace_create">创建</string>
+    <string name="workspace_cloud_empty">还没有配置云端环境</string>
+    <string name="workspace_manage_cloud">管理云端环境</string>
+    <string name="workspace_cloud_unbind_hint">回到本机目录，文件仍留在云端</string>
+    <string name="workspace_pick_failed">这个位置没有可用的真实路径，换一个文件夹</string>
+    <string name="workspace_bind_after_first_message">发第一条消息后才能绑定云端环境</string>
+    <string name="workspace_pick_current">当前 · %1$s</string>
+    <!-- 历史栏按工作区分组 -->
+    <string name="state_on">已开启</string>
+    <string name="state_off">未开启</string>
+    <string name="group_plain">普通对话</string>
+    <string name="group_local">本地工作区</string>
+    <string name="group_cloud">云端工作区</string>
+    <string name="group_workspace_internal">内置工作区</string>
+    <string name="group_workspace_device">本机文件夹</string>
+    <string name="group_workspace_cloud">云端环境</string>
+    <string name="workspace_kind_none">未设置 · 普通对话，工具落在应用内置目录</string>
+    <string name="workspace_pick_plain">当前 · 普通对话（未设置工作区）</string>
+    <string name="workspace_current">当前绑定</string>
+    <string name="workspace_kind_internal">内置目录 · 无需任何权限</string>
+    <string name="workspace_kind_device">本机目录 · 需要「所有文件访问」</string>
+    <string name="workspace_kind_container">容器内目录 · 以宿主机路径绑定</string>
+    <string name="workspace_hint">Agent 与终端只能看到这个目录里的东西。换绑不会移动文件。</string>
+    <string name="workspace_shortcuts">常用位置</string>
+    <string name="workspace_browse">浏览</string>
+    <string name="workspace_parent">上一级</string>
+    <string name="workspace_empty">（没有子目录）</string>
+    <string name="workspace_not_dir">这不是一个目录</string>
+    <string name="workspace_no_permission">读不到这个目录 —— 需要在「权限管理」里打开所有文件访问</string>
+    <string name="workspace_bind_here">绑定到此目录</string>
+    <string name="workspace_container_hint">容器工作区填 Ubuntu rootfs 里那个目录的宿主机路径，例如 /storage/emulated/0/ubuntu/rootfs/home/user/app。文件读写与命令执行都直接作用在上面。</string>
+    <string name="workspace_input_path">手动输入路径</string>
+    <string name="workspace_reset">回到内置</string>
+    <string name="workspace_open_permissions">去授权</string>
+
+    <string name="permissions_title">权限管理</string>
+    <string name="permissions_intro">这些是 App 运行时会用到的系统能力。每一项都只在你亲手打开后才生效，随时可以收回。</string>
+    <string name="permissions_granted">已授予</string>
+    <string name="permissions_denied">未授予</string>
+    <string name="permissions_unknown">未知</string>
+    <string name="permissions_granted_count">%1$d / %2$d</string>
+    <string name="permissions_open">打开</string>
+    <string name="permissions_open_failed">系统里找不到这一项的入口，请到「应用信息」里手动查找</string>
+    <string name="permissions_footer">无障碍与所有文件访问都是系统级开关，只能由你在系统设置里打开 —— 任何 App 都无法代劳。</string>
+
+    <string name="permission_notifications">通知</string>
+    <string name="permission_notifications_body">长任务完成、后台整理结束时提醒你。</string>
+    <string name="permission_notifications_impact">不给：任务只能在前台看着，切走就静默。</string>
+    <string name="permission_files">所有文件访问</string>
+    <string name="permission_files_body">把工作区绑到存储卡上的真实目录。</string>
+    <string name="permission_files_impact">不给：只能用内置工作区，读写不到 /storage 下的项目。</string>
+    <string name="permission_overlay">悬浮窗</string>
+    <string name="permission_overlay_body">操作屏幕时在顶部显示"正在做什么"。</string>
+    <string name="permission_overlay_impact">不给：操作照常，但你看不见它此刻在点哪里。</string>
+    <string name="permission_accessibility">无障碍服务</string>
+    <string name="permission_accessibility_body">读取当前界面的控件，并执行点击、输入、滑动。</string>
+    <string name="permission_accessibility_impact">不给：「操作屏幕」整套工具不可用。</string>
+    <string name="permission_battery">电池优化白名单</string>
+    <string name="permission_battery_body">长时间任务不被系统在后台掐断。</string>
+    <string name="permission_battery_impact">不给：锁屏后长任务可能中断。</string>
+
+    <string name="screen_title">操作屏幕</string>
+    <string name="screen_connected">已连接</string>
+    <string name="screen_disconnected">未开启</string>
+    <string name="screen_intro">开启后，Agent 能在你同意的前提下读取当前界面的控件并操作它 —— 点按钮、填表单、滑动列表、返回上一页。</string>
+    <string name="screen_service_name">DSHA 屏幕操作服务</string>
+    <string name="screen_service_body">这是一个无障碍服务。开启后它只看当前前台界面，不会在后台读别的应用。</string>
+    <string name="screen_enable">去开启</string>
+    <string name="screen_open_settings">打开系统设置</string>
+    <string name="screen_rules_title">它不会做什么</string>
+    <string name="screen_rule_foreground">只读前台：后台应用、通知内容一律不碰。</string>
+    <string name="screen_rule_password">密码框不读不点，含密码框的界面不截屏。</string>
+    <string name="screen_rule_snapshot">每次操作都要带上刚读到的快照，界面变了就拒绝执行。</string>
+    <string name="screen_rule_stop">随时可停：关掉系统开关即立刻失效。</string>
+    <string name="screen_probe">试读一次当前屏幕</string>
+    <string name="screen_probing">正在读取…</string>
+    <string name="screen_probe_ok">读取成功：拿到 %1$d 个字符的界面快照。</string>
+    <string name="screen_last_action">%1$s · %2$s</string>
+    <string name="screen_footer">操作屏幕的能力默认关闭。开着它的时候，模型每一次点击都会记在对话里的工具卡片上，你看得见。</string>
+
+    <string name="screen_service_label">DSHA 屏幕操作</string>
+    <string name="screen_service_description">允许 DSHA 读取当前界面并执行点击、输入等操作。只在你自己开启时生效，随时可以关闭。</string>
+    <string name="screen_service_summary">让 Agent 操作这台手机的界面</string>
+
+    <!-- ── 云端工作环境（v1.2.2） ───────────────────────────── -->
+    <string name="settings_cloud">云端环境</string>
+    <string name="settings_cloud_hint">把工作区放到公网机器上，不占手机存储。</string>
+
+    <string name="cloud_title">云端环境</string>
+    <string name="cloud_intro">把工作区放在一台远端机器上，手机只负责发指令。不用装 Ubuntu，不占手机存储；每个对话单独绑定，不同话题不会串。两种接法：HTTP 服务（用下面的部署包）或 SSH 直连一台 Linux（什么都不用装）。</string>
+    <string name="cloud_add">添加云端环境</string>
+    <string name="cloud_edit">修改</string>
+    <string name="cloud_delete">删除</string>
+    <string name="cloud_delete_title">删除这个云端环境？</string>
+    <string name="cloud_delete_body">「%1$s」的连接信息会被清掉。那台机器上的文件不会被动。</string>
+    <string name="cloud_delete_bound_body">「%1$s」正被这个对话使用。删除后，这个对话会退回本地工作区。</string>
+    <string name="cloud_bind_here">绑定到本对话</string>
+    <string name="cloud_unbind_here">解绑</string>
+    <string name="cloud_bound_badge">使用中</string>
+    <string name="cloud_test">测试</string>
+    <string name="cloud_testing">测试中…</string>
+    <string name="cloud_test_ok">连上了。</string>
+    <string name="cloud_test_ok_exec">连上了（根路径不响应，但执行通道正常）。</string>
+    <string name="cloud_test_fail">连不上：检查地址、令牌，以及那台机器上的服务是否还在跑。</string>
+    <string name="cloud_test_fail_reason">连不上：%1$s</string>
+    <string name="cloud_kind_http">HTTP 服务</string>
+    <string name="cloud_kind_ssh">SSH 服务器</string>
+    <string name="cloud_field_host">主机（IP 或域名）</string>
+    <string name="cloud_field_port">端口</string>
+    <string name="cloud_field_user">用户名</string>
+    <string name="cloud_auth_password">密码</string>
+    <string name="cloud_auth_key">私钥</string>
+    <string name="cloud_field_password">登录密码</string>
+    <string name="cloud_field_key">私钥内容（-----BEGIN … PRIVATE KEY-----）</string>
+    <string name="cloud_field_passphrase">私钥口令（没有就留空）</string>
+    <string name="cloud_field_workdir">工作目录（留空 = 登录后的目录）</string>
+    <string name="cloud_ssh_hint">SSH 方式不需要在服务器上装任何东西：命令走 exec 通道、文件走 SFTP，能力与 HTTP 服务完全一致。首次连接会把一份几行的辅助脚本放到 ~/.dsha/，删掉也不影响使用。主机密钥不做预置校验（换服务器不会被锁在门外），指纹在测试连接后可以核对。</string>
+    <string name="cloud_field_name">名字（随便起，例如「东京小机器」）</string>
+    <string name="cloud_field_url">地址（https://…）</string>
+    <string name="cloud_field_token">令牌</string>
+    <string name="cloud_field_hint">这两样由部署它的 AI 给你。地址填根地址，不要带 /exec。</string>
+    <string name="cloud_deploy_title">还没有云端环境？</string>
+    <string name="cloud_deploy_body">这里内置了一个几十 KB 的部署包。交给任意一个能操作服务器的 AI，它按里面的说明部署到公网，会回你地址和令牌。</string>
+    <string name="cloud_deploy_steps">1. 点「复制部署文本」，粘给任意能操作服务器的 AI　2. 让它部署到公网，回你地址和令牌　3. 回来填进上面</string>
+    <string name="cloud_deploy_open">用其他应用打开</string>
+    <string name="cloud_deploy_share">分享给 AI</string>
+    <string name="cloud_deploy_copy_path">复制路径</string>
+    <string name="cloud_deploy_copy_text">复制部署文本</string>
+    <string name="cloud_deploy_copied_text">部署说明已复制，粘给能操作服务器的 AI 即可</string>
+    <string name="cloud_deploy_copy_failed">部署包读取失败</string>
+    <string name="cloud_deploy_save_failed">保存失败：%1$s</string>
+    <string name="cloud_deploy_saved">已保存到 %1$s</string>
+    <string name="cloud_deploy_copied">路径已复制</string>
+    <string name="cloud_deploy_no_app">没有能打开 zip 的应用，去装一个文件管理器</string>
+    <string name="cloud_deploy_path_public">已存到 %1$s　MT 管理器打开后即定位到此目录</string>
+    <string name="cloud_deploy_path_private">已存到 %1$s　（应用私有目录，第三方文件管理器看不到；去设置里给「所有文件访问」权限就会改存到 Download/DSHA）</string>
+    <string name="cloud_deploy_save">保存部署包</string>
+    <string name="cloud_deploy_working">正在准备…</string>
+    <string name="cloud_footer">令牌等于那台机器上的 shell 权限。别贴到公开的地方。服务本身不做沙箱，建议用普通用户运行。</string>
+
+    <string name="workspace_cloud_section">云端环境</string>
+    <string name="workspace_cloud_bind">绑定</string>
+    <string name="workspace_cloud_switch">更换</string>
+    <string name="workspace_cloud_unbind">解绑</string>
+    <string name="workspace_cloud_bound_hint">这个对话的读写与命令都发生在那台机器上。</string>
+    <string name="workspace_cloud_intro">不想装容器、也不想让 Agent 碰手机存储时用它。绑定后，本对话的文件与命令工具全部转到云端。</string>
+
+    <!-- ── 顶栏更多菜单 / 工具卡细节（v1.2.2） ──────────────── -->
+    <string name="topbar_more">更多</string>
+    <string name="topbar_files">文件管理</string>
+    <string name="topbar_pin">置顶</string>
+    <string name="topbar_unpin">取消置顶</string>
+    <string name="topbar_delete">删除</string>
+
+    <!-- 工具审批 -->
+    <string name="approval_waiting">这一步需要你确认</string>
+    <string name="approval_needs">这一步需要你确认 · %1$s</string>
+    <string name="approval_allow">允许</string>
+    <string name="approval_deny">拒绝</string>
+    <string name="approval_always">本次会话内不再询问</string>
+    <string name="approval_mode_title">工具审批</string>
+    <string name="approval_mode_normal">普通</string>
+    <string name="approval_mode_normal_desc">读文件自动放行；改文件、跑命令、动屏幕都先问你</string>
+    <string name="approval_mode_elevated">高权限</string>
+    <string name="approval_mode_elevated_desc">文件与命令（含 root）自动放行；第三方工具和屏幕仍然询问</string>
+    <string name="approval_mode_yolo">全自动</string>
+    <string name="approval_mode_yolo_desc">所有工具都不再询问，含删除、root 与第三方调用</string>
+    <string name="approval_yolo_confirm_title">打开全自动？</string>
+    <string name="approval_yolo_confirm_body">所有工具调用都会直接执行，不再逐条确认 —— 包括删除文件、以 root 执行命令、操作屏幕。只在你信任当前任务和这台环境时打开。</string>
+    <string name="approval_yolo_confirm_ok">我知道，打开</string>
+    <string name="approval_risk_read">读取</string>
+    <string name="approval_risk_write">修改文件</string>
+    <string name="approval_risk_exec">执行命令</string>
+    <string name="approval_risk_privileged">root 权限</string>
+    <string name="approval_risk_network">访问网络</string>
+    <string name="approval_risk_mcp">第三方工具</string>
+    <string name="approval_risk_screen">操作屏幕</string>
+    <string name="input_model_and_thinking">模型与思考强度</string>
+
+    <string name="tool_detail_args">参数</string>
+    <string name="tool_detail_diff">变更</string>
+    <string name="tool_detail_output">返回</string>
+
+    <string name="cloud_files_no_env">这个对话还没有绑定云端环境。</string>
+    <string name="cloud_files_close">关闭</string>
+    <string name="cloud_files_loading">读取中…</string>
+    <!-- 定时任务 -->
+    <string name="schedule_title">定时任务</string>
+    <string name="schedule_page_hint">到点用系统通知提醒你。也可以直接跟 AI 说「每天早上八点提醒我喝水」。</string>
+    <string name="schedule_empty">还没有定时提醒</string>
+    <string name="schedule_add">新建提醒</string>
+    <string name="schedule_new_title">提醒什么？</string>
+    <string name="schedule_field_title">喝水 / 开会 / 吃药</string>
+    <string name="schedule_field_note">补充说明（可选）</string>
+    <string name="schedule_time">时间</string>
+    <string name="schedule_channel">定时提醒</string>
+    <string name="schedule_channel_desc">到点时提醒你</string>
+    <string name="schedule_notify_body">到点了</string>
+    <string name="schedule_delete">删除提醒</string>
+    <string name="schedule_count">%1$d 个提醒</string>
+    <string name="settings_group_agent">Agent</string>
+    <string name="settings_group_extension">扩展能力</string>
+    <string name="settings_group_model">模型与服务</string>
+    <string name="settings_group_data">数据</string>
+    <string name="settings_group_more">其它</string>
+    <string name="settings_group_app">应用</string>
+    <string name="settings_group_voice">语音</string>
+    <string name="settings_group_diag">诊断</string>
+    <string name="settings_debug_log">软件日志</string>
+    <string name="settings_debug_log_off">已关闭</string>
+    <string name="settings_export_log">导出日志</string>
+    <string name="log_export_done">日志已导出</string>
+    <string name="log_export_failed">导出失败，请换个目录再试</string>
+    <string name="settings_group_about">关于</string>
+    <string name="settings_personalize">个性化</string>
+    <string name="settings_profile_subtitle">账号与资料</string>
+    <string name="settings_account_manage">账号管理</string>
+    <string name="settings_group_appearance">外观与阅读</string>
+    <string name="settings_screen_value_a11y">无障碍</string>
+    <string name="settings_screen_value_root">ROOT</string>
+    <string name="settings_screen_value_off">未开启</string>
+    <string name="settings_schedule_value">%1$d 个</string>
+    <string name="settings_schedule_none">未设置</string>
+    <string name="settings_agent_default">新对话默认启用</string>
+    <string name="screen_root_title">Root 通道</string>
+    <string name="screen_root_body">设备已 root 时，可以直接用 su 执行 input / uiautomator / screencap，不需要无障碍服务。两条通道同时可用时优先走无障碍（节点带指纹校验，点错的风险更小）；Root 是备用路径。授权弹窗由 Magisk / KernelSU 弹出，本应用不会自己提权。</string>
+    <string name="screen_root_check">检测 Root</string>
+    <string name="screen_root_checking">检测中…</string>
+    <string name="screen_root_available">已授权</string>
+    <string name="screen_root_unavailable">不可用</string>
+    <string name="screen_root_unknown">未检测</string>
+    <string name="screen_channel_auto">自动</string>
+    <string name="screen_channel_auto_hint">无障碍可用时优先，否则走 Root</string>
+    <string name="screen_channel_a11y">无障碍服务</string>
+    <string name="screen_channel_a11y_hint">在系统设置里手动开启，能读到控件节点</string>
+    <string name="screen_channel_root">Root</string>
+    <string name="screen_channel_root_hint">su 授权一次，重启后仍然有效</string>
+    <string name="screen_root_grant">授权 Root / 重新检测</string>
+    <string name="screen_rules_compact">只在当前前台应用内操作；不读取密码框与支付页；每次动作都会在屏幕顶部留下提示；随时可以在对话页停止。</string>
+    <!-- 设置：我 / 对话与记忆 -->
+    <string name="profile_open_settings">设置与资料</string>
+    <string name="settings_group_me">我</string>
+    <string name="settings_group_dialog">对话与 Agent</string>
+    <string name="settings_persona">人设</string>
+    <string name="settings_persona_none">未设置</string>
+    <string name="settings_persona_hint">告诉 AI 你是谁，每段对话都会带上</string>
+    <string name="persona_title">人设</string>
+    <string name="persona_page_hint">写清你是谁、想被怎么称呼、习惯什么样的回答。它会拼在系统提示词最前面，每段对话都生效；换话题时不必重写。</string>
+    <string name="persona_placeholder">例如：我是老张，做渗透测试和 C++ 开发。回答直接一点，别客套，能用代码说清的就别写段落。</string>
+    <string name="persona_saved">已保存</string>
+    <string name="persona_editor_title">你的设定</string>
+    <string name="persona_char_count">%1$d 字</string>
+    <string name="settings_auto_compact">自动压缩上下文</string>
+    <string name="settings_auto_compact_hint">占用达到阈值时先把旧对话整理成摘要</string>
+    <string name="settings_memory_row_hint">从其他会话里捞相关片段，作为背景</string>
+    <!-- 首次引导 -->
+    <string name="onboard_skip">跳过</string>
+    <string name="onboard_next">下一步</string>
+    <string name="onboard_start">开始使用</string>
+    <string name="onboard_ask_title">直接说就行</string>
+    <string name="onboard_ask_body">在底部输入框打字，回车或点箭头发送；图片可以一次多选，也能附加文件。空输入时按住输入栏说话。</string>
+    <string name="onboard_model_title">模型就在顶上</string>
+    <string name="onboard_model_body">设置里添加一个端点 —— 官方、中转站或本机都行，模型列表直接从端点拉取。对话页顶部点一下就能换，上下文长度也跟着走。</string>
+    <string name="onboard_think_title">想深一点，拖一下</string>
+    <string name="onboard_think_body">思考程度一共五档，越往右想得越久。难题往右，闲聊往左，用不上就关掉。</string>
+    <string name="onboard_memory_title">别让上下文悄悄满</string>
+    <string name="onboard_memory_body">左边的圆环是已经用掉的上下文。到阈值会自动整理旧对话；想立刻压，点圆环自己来。阈值会按窗口大小上调 —— 32K 的模型到七成就压，1M 的模型要到九成才压。</string>
+    <string name="onboard_agent_title">让它真的动手</string>
+    <string name="onboard_agent_body">打开 Agent，它就能读写文件、跑命令、操作屏幕。每次动手前都会按审批档位拦一下，全放行要在设置里主动开。</string>
+    <string name="onboard_preset_title">先定好它的样子</string>
+    <string name="onboard_preset_body">预设是一段可命名的系统提示词，写一次、到处用。人设管"我是谁"，预设管"怎么答"，会话补充管"这一次只看什么"。预设可以直接从文档导入 —— 纯文本、Markdown、JSON 都行。</string>
+    <string name="onboard_files_title">文件在同一个地方</string>
+    <string name="onboard_files_body">工作区就是 AI 动手的地方：读文件、改代码、跑脚本都落在这里。它改的是真实文件，不是聊天框里的一段文字。</string>
+    <string name="onboard_cloud_title">算力不够就借一台</string>
+    <string name="onboard_cloud_body">云端工作区是一台远端的 Linux：能装包、能编译、能跑长任务。地址与令牌填一次就行，之后每个对话都能绑上它。</string>
+
+    <!-- 选择模型（气泡里要出现哪些） -->
+    <string name="model_picker_title">选择模型</string>
+    <string name="model_picker_all">全选</string>
+    <string name="model_picker_none">清空</string>
+    <string name="model_picker_empty">没有匹配的模型</string>
+    <string name="model_picker_search">搜索模型</string>
+    <string name="model_picker_count">已选 %1$d / %2$d</string>
+    <string name="model_picker_vision">识图</string>
+    <string name="model_picker_open">选择模型…</string>
+    <string name="action_confirm">确定</string>
+    <string name="model_picker_all_hint">全部（%1$d 个）</string>
+
+    <!-- 运行环境：Ubuntu -->
+    <string name="runtime_ubuntu">Ubuntu 环境</string>
+    <string name="runtime_ubuntu_desc">完整 Linux：真 bash + apt + gcc，能执行任意终端命令。约 30 MB 下载、300 MB 磁盘。</string>
+    <string name="runtime_ubuntu_absent">未安装</string>
+    <string name="runtime_ubuntu_unsupported">不支持</string>
+    <string name="runtime_ubuntu_install">安装</string>
+    <string name="runtime_ubuntu_installing">安装中…</string>
+    <string name="runtime_ubuntu_reinstall">重新安装</string>
+    <string name="runtime_ubuntu_remove">卸载</string>
+    <string name="runtime_ubuntu_remove_hint">会删掉整个 Ubuntu 根文件系统，里面装过的包和写过的文件都会没有。工作区文件不受影响。</string>
+    <string name="runtime_python">Python</string>
+    <string name="runtime_python_desc">Ubuntu 里的 CPython：装好之后 AI 就能直接跑脚本，不用每次都改写成 shell 命令。</string>
+    <string name="runtime_python_ready">已就绪</string>
+    <string name="runtime_python_absent">未安装</string>
+    <string name="runtime_python_install">安装 Python</string>
+    <string name="runtime_python_installing">安装中…</string>
+    <string name="runtime_python_reinstall">重装 Python</string>
+    <string name="runtime_repair">修复环境</string>
+    <string name="runtime_working">处理中…</string>
+
+    <!-- 文件管理器（双栏） -->
+    <string name="files_title">文件管理</string>
+    <string name="files_bookmarks">书签</string>
+    <string name="files_bookmarks_empty">还没有书签。长按文件或文件夹选「添加书签」。</string>
+    <string name="files_tools">工具</string>
+    <string name="files_back">后退</string>
+    <string name="files_forward">前进</string>
+    <string name="files_new_folder">新建文件夹</string>
+    <string name="files_refresh">刷新</string>
+    <string name="files_up">上一级</string>
+    <string name="files_no_parent">已经到最顶层了</string>
+    <string name="files_empty">空文件夹</string>
+    <string name="files_count">%1$d 个文件夹 · %2$d 个文件</string>
+    <string name="files_copy">复制</string>
+    <string name="files_move">移动</string>
+    <string name="files_delete">删除</string>
+    <string name="files_rename">重命名</string>
+    <string name="files_compress">压缩</string>
+    <string name="files_properties">属性</string>
+    <string name="files_share">分享</string>
+    <string name="files_open_with">打开方式</string>
+    <string name="files_bookmark">添加书签</string>
+    <string name="files_view_text">文本查看</string>
+    <string name="files_copy_to_hint">复制 / 移动会落到另一栏：%1$s</string>
+    <string name="files_failed">失败：%1$s</string>
+    <string name="files_copied">已复制 %1$s → %2$s</string>
+    <string name="files_moved">已移动 %1$s → %2$s</string>
+    <string name="files_compressed">已压缩为 %1$s</string>
+    <string name="files_bookmarked">已加入书签</string>
+    <string name="files_delete_title">删除</string>
+    <string name="files_delete_body">「%1$s」会被永久删除，不进回收站。</string>
+    <string name="files_missing">路径不存在：%1$s</string>
+    <string name="files_no_app">没有能打开它的应用</string>
+    <string name="web_preview">预览</string>
+    <string name="web_preview_title">网页预览</string>
+    <string name="web_preview_refresh">刷新</string>
+    <string name="web_preview_external">在浏览器中打开</string>
+    <string name="web_preview_failed">预览服务启动失败：%1$s</string>
+    <string name="web_preview_local_only">预览服务只在本机 127.0.0.1 上监听，同一 Wi-Fi 下的其他设备看不到。</string>
+    <string name="files_loading">读取中…</string>
+    <string name="files_truncated">文件超过 %1$s，只显示前一部分。</string>
+    <string name="files_pages">页</string>
+    <string name="files_prev_page">上一页</string>
+    <string name="files_next_page">下一页</string>
+    <string name="files_prop_name">名称</string>
+    <string name="files_prop_path">路径</string>
+    <string name="files_prop_type">类型</string>
+    <string name="files_prop_dir">文件夹</string>
+    <string name="files_prop_file">文件</string>
+    <string name="files_prop_size">大小</string>
+    <string name="files_prop_modified">修改时间</string>
+    <string name="files_prop_permission">权限</string>
+    <string name="files_prop_children">子项</string>
+    <string name="files_show_hidden">显示隐藏文件</string>
+    <string name="files_hide_hidden">隐藏隐藏文件</string>
+    <string name="action_create">创建</string>
+
+
+    <string name="mcp_protocol_hint">标准 MCP（JSON-RPC 2.0 / Streamable HTTP）：地址要填到端点，通常是 https://host/mcp；令牌写成 Authorization: Bearer xxx。</string>
+    <string name="files_no_permission">读不了这个目录。到「设置 → 权限」开启「所有文件访问」后再试。</string>
+
+    <!-- ── 工作区：不绑定 ───────────────────────────────── -->
+    <string name="workspace_pick_none">不绑定工作区</string>
+    <string name="workspace_pick_none_desc">只聊天，不落文件</string>
+
+    <!-- ── 云端：上传 ───────────────────────────────────── -->
+    <string name="cloud_upload">上传文件</string>
+    <string name="cloud_uploading">正在上传 %1$s</string>
+    <string name="cloud_upload_done">已上传 %1$s（%2$s）</string>
+    <string name="cloud_upload_failed">上传失败：%1$s</string>
+    <string name="cloud_upload_too_large">文件太大，单次最多 %1$s。</string>
+    <string name="cloud_upload_old_server">服务端还是旧版本，没有 /fs/upload 这个接口。到「云端工作区」页用最新的部署包重新部署一次即可（v3 起支持上传）。</string>
+
+    <!-- ── 终端 ─────────────────────────────────────────── -->
+    <string name="topbar_terminal">终端</string>
+    <string name="terminal_new">新建会话</string>
+    <string name="terminal_close">关闭会话</string>
+    <string name="terminal_hint">输入命令后按发送。每个标签是一个独立会话：目录、历史、bash 环境互不影响。</string>
+
+    <!-- ── MCP ──────────────────────────────────────────── -->
+    <string name="mcp_count_value">%1$d 个服务 · %2$d 个工具</string>
+    <string name="mcp_intro_title">MCP：给模型装上外部工具</string>
+    <string name="mcp_intro_body">连一个服务端，它的工具就会出现在模型手里。支持标准 MCP（JSON-RPC 2.0 / Streamable HTTP）与本地 stdio。</string>
+    <string name="mcp_empty_title">还没有 MCP 服务</string>
+    <string name="mcp_section_servers">已连接的服务</string>
+    <string name="mcp_section_manage">管理</string>
+    <string name="mcp_add_first">添加第一个服务</string>
+    <string name="mcp_status_idle">未连接</string>
+    <string name="mcp_status_connecting">连接中…</string>
+    <string name="mcp_status_ready">%1$s · %2$d 个工具</string>
+    <string name="mcp_status_failed">连接失败</string>
+
+    <!-- ── 技能参数 ─────────────────────────────────────── -->
+    <string name="skill_proactive_chance">每小时主动概率</string>
+    <string name="skill_proactive_idle">最小空闲</string>
+    <string name="skill_proactive_idle_value">%1$d 分钟</string>
+
+    <!-- ── 上下文与记忆参数 ─────────────────────────────── -->
+    <string name="tuning_title">上下文压缩</string>
+    <string name="tuning_entry">上下文压缩参数</string>
+    <string name="tuning_entry_value">%1$d%% · 每 %2$d 条用户消息</string>
+    <string name="tuning_compact_group">上下文压缩</string>
+    <string name="tuning_ratio">触发阈值</string>
+    <string name="tuning_compact_hint">两个阈值任一满足就压缩：占用达到上面的比例，或自上次摘要后用户说了这么多条。比例与条数是**基础值**，实际触发点按窗口大小上调（32K 到七成，1M 到九成）。右侧数字可直接点开输入，滑杆只给常用档位。摘要四节固定，写什么由提示词决定；这里只控制&quot;什么时候压&quot;。</string>
+    <string name="tuning_compact_policy_hint">上面三个开关决定&quot;什么时候压&quot;。比例与条数是**基础值**，实际触发点会按窗口大小上调 —— 32K 的模型到七成就该压，1M 的模型要到九成才压。压完之后会落到触发线以下，不会一轮一轮地重压。</string>
+    <string name="tuning_compact_large_exempt">大窗口不自动压</string>
+    <string name="tuning_compact_reserve_output">给输出留位置</string>
+    <string name="tuning_compact_chunked">长会话分段总结</string>
+
+    <!-- ── 主动消息提示词 ───────────────────────────────── -->
+    <string name="prompt_proactive_nudge">（现在没有人说话。你可以主动开口，用你自己的一两句话接着之前聊过的内容说点什么；不要提到这条提示，也不要问"你还在吗"。）</string>
+
+    <!-- ── 关于 ─────────────────────────────────────────── -->
+    <string name="about_app_name">应用</string>
+    <string name="about_author_role">作者 · 点开主页</string>
+    <string name="about_upstream">上游项目</string>
+
+    <!-- ── 定时任务（补充） ─────────────────────────────── -->
+    <string name="schedule_edit_title">编辑提醒</string>
+
+    <!-- ── 新手引导 ─────────────────────────────────────── -->
+    <string name="onboarding_skip">跳过</string>
+    <string name="onboarding_next">下一步</string>
+    <string name="onboarding_start">开始使用</string>
+    <string name="onboarding_welcome_body">在下面那个输入框里说一句就行。\n想要什么，直接说，不用先学怎么用。</string>
+    <string name="onboarding_basic_title">三处就够</string>
+    <string name="onboarding_basic_body">左上角菜单：历史对话与搜索。\n输入框左下那颗胶囊：换模型、开关思考。\n右上角 ⋯：文件、终端、设置。</string>
+    <string name="onboarding_swipe_hint">左右滑动，一次看一张</string>
+    <string name="onboarding_close">关闭引导</string>
+    <string name="onboarding_demo_prompt">整理这个项目，生成一份报告</string>
+    <string name="onboarding_demo_composer">输入消息，或添加图片与文件</string>
+    <string name="onboarding_replay">重看新手引导</string>
+    <string name="onboarding_replay_summary">悬浮卡片，左右滑动</string>
+    <string name="action_done">完成</string>
+    <string name="skill_tuning_open">参数配置</string>
+    <string name="skill_tuning_title">主动发消息参数</string>
+    <string name="skill_tuning_hint">概率按每小时计；空闲达到设定分钟数之后才可能开口。</string>
+    <string name="skill_no_desc">这个技能没有写说明。</string>
+    <string name="skills_footer_hint">技能是一段写给模型的说明，开启后会拼进系统提示词；关闭即完全移除。</string>
+    <string name="mcp_footer_hint">开启后，这个服务的工具会出现在模型的工具列表里；关闭即摘除，不影响配置。</string>
+    <string name="mcp_edit_title">编辑 MCP 服务</string>
+    <string name="mcp_transport_http">HTTP</string>
+    <string name="mcp_transport_stdio">本地 stdio</string>
+    <string name="mcp_args">参数（args，空格分隔）</string>
+    <string name="mcp_env">环境变量</string>
+    <string name="mcp_add_header">+ 添加请求头</string>
+    <string name="mcp_add_env">+ 添加环境变量</string>
+    <string name="mcp_stdio_hint">stdio 会在本机起一个进程。Android 上没有 npx / uvx，需要先在内置 Ubuntu 或 Termux 里装好运行时，命令写它的绝对路径。</string>
+    <string name="mcp_timeout">超时</string>
+    <string name="mcp_seconds">秒</string>
+    <string name="mcp_test">测试连接</string>
+    <string name="mcp_testing">测试中…</string>
+    <string name="mcp_test_ok">%1$s · %2$d 个工具</string>
+    <string name="mcp_test_fail">连接失败：%1$s</string>
+    <string name="mcp_need_url">先填端点地址</string>
+    <string name="mcp_need_command">先填启动命令</string>
+    <string name="mcp_export_all">导出全部为 JSON</string>
+    <string name="mcp_import_json">粘贴 JSON 导入</string>
+    <string name="mcp_import_hint">支持 mcpServers 配置，也支持单个 { command / url } 对象。导入后仍可逐项修改。</string>
+    <string name="mcp_import_action">导入</string>
+    <string name="mcp_import_bad">解析失败：%1$s</string>
+    <string name="mcp_import_empty">没有找到可导入的服务</string>
+    <string name="mcp_examples">标准示例</string>
+    <string name="onboarding_welcome_title">欢迎使用 DSHA</string>
+    <string name="onboarding_start_button">开始使用</string>
+    <string name="provider_name_zhipu">智谱 GLM</string>
+    <string name="provider_name_moonshot">Moonshot Kimi</string>
+    <string name="provider_name_dashscope">阿里云百炼 · 通义</string>
+    <string name="provider_name_siliconflow">硅基流动</string>
+    <string name="provider_name_openrouter">OpenRouter</string>
+    <string name="provider_name_groq">Groq</string>
+    <string name="provider_name_xai">xAI Grok</string>
+    <string name="provider_name_mistral">Mistral</string>
+    <string name="provider_name_gemini">Google Gemini</string>
+    <string name="provider_name_ollama">Ollama（本机）</string>
+    <string name="provider_name_lmstudio">LM Studio（本机）</string>
+    <string name="speech_language_section">语音语言</string>
+    <string name="tts_language">朗读语言</string>
+    <string name="stt_language">识别语言</string>
+    <string name="speech_lang_auto">跟随界面</string>
+    <string name="speech_lang_zh">中文</string>
+    <string name="speech_lang_en">English</string>
+    <string name="speech_lang_ja">日本語</string>
+    <string name="screen_pipeline_title">识别管线</string>
+    <string name="screen_pipeline_layout">布局识别（默认）</string>
+    <string name="screen_pipeline_layout_hint">读无障碍节点树：有文字、有按钮、点得准。绝大多数应用都用这个。</string>
+    <string name="screen_pipeline_vision">截图识别</string>
+    <string name="screen_pipeline_vision_hint">看屏幕截图并按坐标点。给游戏、自绘界面用 —— 那些界面没有可读的控件。截图只在内存里，不落盘。</string>
+    <string name="screen_pipeline_hint">选定之后，AI 只会拿到这一种方式的工具 —— 它不会（也没有能力）临时切到另一种。截图识别会在每一次观察时把当前画面发给模型，分辨率与坐标换算一并给出；适合 UE / Unity 这类没有布局的场景。</string>
+    <string name="tool_run_steps">%1$d 步</string>
+    <string name="tool_run_expand">展开这 %1$d 次调用的细节</string>
+    <string name="model_params">模型参数</string>
+    <string name="model_params_on">思考 · %1$s</string>
+    <string name="model_params_off">思考 · 关</string>
+    <string name="model_group_other">其他</string>
+    <string name="profile_label">配置</string>
+    <string name="profile_list_title">模型配置</string>
+    <string name="profile_label_count">%1$s（%2$d 套）</string>
+    <string name="profile_rename">重命名</string>
+    <string name="model_profile_name_hint">随便起，比如「官方」「中转」</string>
+    <string name="model_profile_default_name">配置</string>
+    <string name="profile_no_key">未配置 Key</string>
+    <string name="profile_new">新增配置</string>
+    <string name="profile_name_label">配置名称</string>
+    <string name="profile_delete">删除这套配置</string>
+    <string name="profile_delete_body">只会删掉这套配置的地址、Key 和模型列表；对话不受影响。</string>
+    <string name="profile_saved">已保存</string>
+    <string name="model_group_count">%1$d</string>
+    <string name="workspace_delete">删除工作区</string>
+    <string name="workspace_delete_confirm">删除「%1$s」？里面的文件会一起删掉，不能恢复。</string>
+    <string name="workspace_internal_empty">还没有内置工作区，在对话页的工作区菜单里新建。</string>
+    <string name="topbar_mode_cloud">云端 · %1$s</string>
+    <string name="topbar_mode_internal">内置工作区</string>
+    <string name="topbar_mode_internal_named">内置工作区 · %1$s</string>
+    <string name="topbar_mode_device">本机目录 · %1$s</string>
+    <string name="workspace_folders_group">已创建的文件夹</string>
+    <string name="terminal_ai_footnote">AI 执行过的命令都记在这里，只读。要自己敲命令请开一个新标签。</string>
+
+    <!-- 定时任务动作 -->
+    <string name="schedule_action">动作</string>
+    <string name="schedule_action_remind">提醒</string>
+    <string name="schedule_action_command">运行命令</string>
+    <string name="schedule_action_remind_hint">到点弹通知。</string>
+    <string name="schedule_action_command_hint">到点执行一条 shell 命令，输出写进通知。App 没在前台也能跑。</string>
+    <string name="schedule_command">命令</string>
+    <string name="schedule_command_placeholder">例如：cp -r ~/notes ~/backup</string>
+    <string name="schedule_quiet">成功时不通知</string>
+    <string name="schedule_quiet_hint">只在命令失败时提醒。适合每天跑一次的备份 / 清理。</string>
+    <string name="schedule_need_command">命令不能为空</string>
+    <string name="schedule_notify_command_ok">%1$s 执行成功</string>
+    <string name="schedule_notify_command_fail">%1$s 执行失败（exit %2$d）</string>
+    <string name="schedule_running">正在执行命令…</string>
+    <string name="schedule_timeout">（超时被终止）</string>
+    <string name="schedule_no_output">（无输出）</string>
+    <string name="schedule_channel_command">定时命令</string>
+
+    <!-- 自定义朗读 -->
+    <string name="tts_channel">朗读通道</string>
+    <string name="tts_channel_system">系统语音</string>
+    <string name="tts_channel_deepseek">DeepSeek 官方</string>
+    <string name="tts_channel_custom">自定义 API</string>
+    <string name="tts_channel_hint">系统语音永远可用；官方音质更好但要官方 Key；自定义可以接任意 OpenAI 兼容的语音接口。</string>
+    <string name="tts_custom_section">自定义语音 API</string>
+    <string name="tts_custom_summary">%1$s · %2$s</string>
+    <string name="tts_custom_summary_empty">未配置</string>
+    <string name="tts_custom_url">接口地址</string>
+    <string name="tts_custom_url_placeholder">https://api.openai.com/v1/audio/speech</string>
+    <string name="tts_custom_url_hint">填到 /v1 或整条接口都行，会自动补 /audio/speech。</string>
+    <string name="tts_custom_key">API Key</string>
+    <string name="tts_custom_model">模型</string>
+    <string name="tts_custom_model_placeholder">tts-1 / gpt-4o-mini-tts</string>
+    <string name="tts_custom_voice">音色</string>
+    <string name="tts_custom_voice_placeholder">alloy / nova / 中文女</string>
+    <string name="tts_custom_format">格式</string>
+    <string name="tts_custom_speed">语速</string>
+    <string name="tts_custom_headers">附加请求头</string>
+    <string name="tts_custom_headers_placeholder">X-API-Key: sk-…</string>
+    <string name="tts_custom_headers_hint">一行一个 Key: Value。网关要求自定义鉴权头时用。</string>
+    <string name="tts_custom_test">试听一句</string>
+    <string name="tts_custom_testing">正在合成…</string>
+    <string name="tts_custom_test_ok">合成成功，正在播放</string>
+    <string name="tts_custom_failed">朗读失败：%1$s</string>
+    <string name="tts_auto_read">自动朗读</string>
+    <string name="tts_auto_read_hint">回复写完就念出来。默认关闭。</string>
+    <string name="tts_open_custom">配置语音 API</string>
+
+    <!-- 图片生成 -->
+    <string name="image_api_section">绘图</string>
+    <string name="image_api_entry">图片生成</string>
+    <string name="image_api_entry_on">%1$s</string>
+    <string name="image_api_entry_off">未配置</string>
+    <string name="image_api_url">绘图接口</string>
+    <string name="image_api_url_placeholder">https://api.openai.com/v1/images/generations</string>
+    <string name="image_api_url_hint">OpenAI 兼容的 /images/generations。配好之后 AI 就能画图。</string>
+    <string name="image_api_key">API Key</string>
+    <string name="image_api_model">模型</string>
+    <string name="image_api_model_placeholder">gpt-image-1 / dall-e-3</string>
+    <string name="image_api_size">尺寸</string>
+    <string name="image_api_hint">没配置时不会把绘图工具给模型，它会让用户先配置，而不是反复失败。配置好之后，在对话里描述画面即可（需要开启 Agent 模式）。</string>
+    <string name="image_api_ready">已配置</string>
+    <string name="image_api_ready_hint">填好地址、Key 与模型之后，AI 就能画图</string>
+    <string name="image_api_group_connection">连接</string>
+    <string name="image_api_group_model">模型</string>
+    <string name="image_api_group_output">出图</string>
+    <string name="image_api_model_unset">未选择</string>
+    <string name="image_api_model_empty">还没有模型列表。点下面的「拉取模型列表」，或手动填写。</string>
+    <string name="image_api_model_hint">从服务端拉取，或手动填写模型 id</string>
+    <string name="image_api_model_manual_hint">例如 dall-e-3、flux-schnell</string>
+    <string name="image_api_size_auto">自动</string>
+    <string name="image_api_size_hint">自动 = AI 按你要求的画面比例（竖版 / 横版 / 方图）来定，不是固定方图。这里选的尺寸只是兜底：对话里明确说了比例时，按对话的来。</string>
+    <string name="image_api_size_custom">自定义尺寸…</string>
+    <string name="image_api_size_custom_hint">宽x高，例如 1024x1024。留空即自动。</string>
+    <string name="image_drawing">正在绘制…</string>
+    <string name="image_generated">生成的图片</string>
+    <string name="image_load_failed">图片读取失败</string>
+    <string name="image_save">保存图片</string>
+    <string name="image_saved">已保存</string>
+    <string name="image_save_failed">保存失败</string>
+    <string name="image_gen_failed">生成图片失败：%1$s</string>
+    <string name="tool_think">思考</string>
+    <string name="tool_generate_image">生成图片</string>
+
+    <!-- 文件管理器多选 -->
+    <string name="files_selected_count">已选 %1$d 项</string>
+    <string name="files_select_all">全选</string>
+    <string name="files_select_invert">反选</string>
+    <string name="files_select_clear">取消选择</string>
+    <string name="files_batch_copy">复制</string>
+    <string name="files_batch_move">移动</string>
+    <string name="files_batch_delete">删除</string>
+    <string name="files_batch_delete_title">删除所选</string>
+    <string name="files_batch_delete_body">将删除 %1$d 项，不能恢复。确定？</string>
+    <string name="files_batch_done">已处理 %1$d 项</string>
+    <string name="files_swipe_hint">向右滑动条目可多选</string>
+    <string name="files_new_file">新建文件</string>
+
+    <!-- 侧栏新对话 -->
+
+    <!-- MCP 补充 -->
+    <string name="mcp_add_manual">添加服务</string>
+    <string name="mcp_add_paste">粘贴 JSON</string>
+    <string name="mcp_http_title">HTTP</string>
+    <string name="mcp_http_hint">填接口地址，本地与远程都可以；HTTPS 同样支持。</string>
+    <string name="prompt_attachments_omitted">（此处另有 %d 个较早的附件，为节省上下文未一并发送；需要时可以让用户重新上传）</string>
+    <string name="tuning_compact_by_count">按消息条数触发</string>
+    <string name="tuning_compact_count">条数阈值</string>
+    <string name="tuning_count_unit">条</string>
+    <string name="tuning_compact_rules">摘要补充规则</string>
+    <string name="tuning_compact_rules_hint">追加到压缩提示词末尾，优先级最高。写你绝对不能丢的东西。</string>
+    <string name="tuning_compact_rules_placeholder">例如：所有代码标识符、文件路径、命令原文一律照抄，不许改写；金额与版本号必须保留。</string>
+    <string name="tool_cancelled">已停止（用户中断，工具没有跑完）</string>
+    <string name="api_test_timeout">测试超时：25 秒内没有响应。端点可能把 /models 转给了不响应的后端，换个地址或直接用「发送」验证。</string>
+    <string name="api_key_not_required">免 Key</string>
+
+    <!-- 设置：统一组件 / API 配置页（2.3.6） -->
+    <string name="action_paste">粘贴</string>
+    <string name="action_show_secret">显示明文</string>
+    <string name="action_hide_secret">隐藏</string>
+    <string name="clipboard_empty">剪贴板里没有文字</string>
+    <string name="choice_no_match">没有匹配项</string>
+    <string name="api_group_connection">连接</string>
+    <string name="api_group_limits">上下文与输出</string>
+    <string name="api_group_advanced">高级</string>
+    <string name="api_model_current">当前模型</string>
+    <string name="api_model_switcher">对话里可切换的模型</string>
+    <string name="api_model_switcher_hint">决定输入框的模型切换面板里列出哪几个，不影响上面的「当前模型」。</string>
+    <string name="api_state_ready">已就绪</string>
+    <string name="api_state_no_key">未填 API Key</string>
+    <string name="api_state_no_model">未选模型</string>
+    <string name="api_profile_count">共 %1$d 套</string>
+    <string name="api_test_need_key">还没填 API Key，先填好再测试。</string>
+    <string name="profile_current">使用中</string>
+    <string name="profile_delete_title">删除「%1$s」？</string>
+    <string name="about_brand_icons">模型标志</string>
+
+    <!-- 技能 / 运行环境：此前写死在代码里的几句 -->
+    <string name="error_read_failed_short">读取失败</string>
+    <string name="error_install_failed_short">安装失败</string>
+    <string name="error_repair_failed_short">修复失败</string>
+    <string name="runtime_preparing">准备中…</string>
+</resources>
+
+
