@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    「操作屏幕」的无障碍服务配置。
+
+    - canPerformGestures：滑动 / 点击兜底（节点自身不可点时按坐标补）
+    - canRetrieveWindowContent：读当前界面的节点树
+    - canTakeScreenshot：Android 11+ 截屏（模型拿它当"看一眼"的证据）
+    - eventTypes 只订阅窗口切换：其余变化不值得我们被唤醒，省电
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="true"
+    android:canTakeScreenshot="true"
+    android:description="@string/screen_service_description"
+    android:notificationTimeout="100"
+    android:summary="@string/screen_service_summary" />

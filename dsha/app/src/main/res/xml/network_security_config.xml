@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    网络安全配置。
+
+    这个 App 的端点由用户自己填，自建中转站 / 局域网服务大量还在 http 上。
+    Android 9（API 28）起默认禁止明文流量，且**不允许**用
+    `android:usesCleartextTraffic` 之外的隐式方式放开 —— 不显式声明，
+    用户填 `http://192.168.1.9:8080/v1` 就只会得到
+    `CLEARTEXT communication not permitted`，看起来像"这个 App 不支持 http 协议"。
+
+    所以这里显式放行明文，并且：
+    - 只放行，不强制 —— https 仍然照常走系统校验；
+    - 信任用户安装的 CA，自签名证书的内网 https 端点也能连
+      （否则用户只能看到 `Trust anchor for certification path not found`）。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

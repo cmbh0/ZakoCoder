@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider 能对外暴露的路径。
+
+    只开两个子目录，不开整个 cacheDir / filesDir —— 范围越小越安全：
+
+    - `cacheDir/captures`  拍照中转站：相机写进来，读完转 base64 落库，立刻删掉。
+    - `filesDir/exports`   主动给出去的文件（云端工作区部署包）。
+-->
+<paths>
+    <cache-path name="captures" path="captures/" />
+    <files-path name="exports" path="exports/" />
+    <!--
+        「用其他应用打开」要给出去的那份部署包。
+
+        放在公共 Download/DSHA/ 而不是应用私有目录：MT 管理器、文件管理器这类
+        第三方 App 只有拿到**真实路径**才能"定位到文件夹"。私有目录
+        （/Android/data/...）在 Android 11+ 上它们根本进不去，除非有 root。
+        所以优先写公共目录，只有拿不到"所有文件访问"权限时才回落到私有目录。
+    -->
+    <external-path name="downloads" path="Download/DSHA/" />
+    <external-files-path name="external_exports" path="exports/" />
+    <!--
+        文件管理器的「分享 / 打开方式」。
+
+        和上面几条不同，这里放开的是**整片存储**：文件管理器本来就该能分享
+        任意一个文件，逐个目录开白名单等于把功能阉掉。provider 本身是
+        exported=false + 临时授权，外部拿到的只是单次读权限。
+    -->
+    <external-path name="sdcard" path="." />
+    <files-path name="files" path="." />
+    <cache-path name="cache" path="." />
+    <external-files-path name="external_files" path="." />
+</paths>
