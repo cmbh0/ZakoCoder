@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+        运行期能力。全部**只声明、不主动申请**：设置 → 权限管理 里逐项由用户点开。
+        为什么不加 CAMERA：拍照走系统相机（`ACTION_IMAGE_CAPTURE` 不需要 CAMERA 权限），
+        声明了就是白挂一项。
+    -->
+    <!-- 通知：查询通知权限状态 + 后续任务提醒 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 所有文件访问：把工作区绑到 /storage/emulated/0/... 下的真实目录 -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- 悬浮窗：操作屏幕时在顶部显示"正在做什么"，让用户看得见 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 定时提醒：精确闹钟（Android 12+ 需用户授权，没有就降级为非精确） -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- 定时命令：到点以后台服务执行（shortService，上限三分钟） -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SHORT_SERVICE" />
+    <!-- 重启后重排闹钟：系统闹钟不跨重启保留 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 电池优化白名单：长任务不被系统掐断 -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- 屏幕操作要能列出可启动的应用（包可见性） -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <!--
+        Android 11+ 的包可见性：`TTS_SERVICE` 让 `TextToSpeech` 能找到引擎、列出音色。
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.SimpleChat">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|uiMode|density|fontScale"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SimpleChat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            「拍照」要一个可写的位置给相机 App，并把 URI 授权给它。
+
+            FileProvider 是**唯一**能给出去临时写权限的做法 —— 直接传
+            `file://` 从 Android 7 起会抛 FileUriExposedException。
+            用自己包名下的 `cacheDir/captures`，图片导入后立刻删掉：
+            它只是中转，base64 已经进库了。
+        -->
+        <!--
+            「操作屏幕」的无障碍服务。
+
+            exported=false + BIND_ACCESSIBILITY_SERVICE 是系统要求：
+            只有用户亲手在系统设置里勾选，系统才会把这个服务绑起来，
+            App 自己没法绕过 —— 这层同意是这项能力的全部合法性来源。
+        -->
+        <service
+            android:name=".service.ScreenService"
+            android:exported="false"
+            android:label="@string/screen_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/screen_service" />
+        </service>
+
+        <!-- 到点响铃 / 到点执行命令 -->
+        <receiver
+            android:name=".service.ScheduleReceiver"
+            android:exported="false" />
+
+        <!--
+            定时命令的执行体。
+
+            shortService：上限三分钟，正好够一条最长 120 秒的命令收尾 ——
+            比 WorkManager 轻（不需要额外依赖与调度抖动），又比在广播里硬跑
+            安全（广播只有十秒窗口，超了记 ANR）。
+        -->
+        <service
+            android:name=".service.ScheduleRunService"
+            android:exported="false"
+            android:foregroundServiceType="shortService" />
+
+        <!-- 开机重排 -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
